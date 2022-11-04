@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class GameMasterScript : MonoBehaviour
 {
@@ -41,6 +43,8 @@ public class GameMasterScript : MonoBehaviour
 
     public void AddUpgrade(Upgrade upgrade){
         upgrade.ApplyUpgrade(selectedTurret);
+        TextMeshProUGUI buttonTextField = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>();
+        buttonTextField.text = upgrade.title + " " + upgrade.cost + "$";
         selectedTurret.UpdateGraphics();
         UpdateMoney(-upgrade.cost);
     }

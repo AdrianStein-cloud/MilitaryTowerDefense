@@ -440,24 +440,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &542700619 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9140772078617553151, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-  m_PrefabInstance: {fileID: 9140772079635980215}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &542700624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542700619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6165cc64a0d58d742a46f46974a944a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  previousUpgrades: []
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,17 +987,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
-      propertyPath: waves.Array.data[0].rate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 127463416}
-    - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
-      propertyPath: waves.Array.data[0].count
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1321518618028449173, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1307,461 +1281,61 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1959235648}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 3ac9d5ae895d9a74f95b20a6a768db6c, type: 2}
-    - target: {fileID: 271759886028636878, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: de1683ae9fca06f419b1855588444f63, type: 2}
-    - target: {fileID: 553048835601084105, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ae1ca16960ee594189ccfb6e7437b14, type: 2}
-    - target: {fileID: 1914341064836880432, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2149676264939568059, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: gameMaster
-      value: 
-      objectReference: {fileID: 1959235648}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: c8a4375098842b94794a5d06e492fbd8, type: 2}
-    - target: {fileID: 2307679583538823680, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c7878d6cd50ef444a73d6bc4659c5f7, type: 2}
-    - target: {fileID: 4041112352259836675, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: e1f9c045418d2f341a94ad1f492ec29c, type: 2}
-    - target: {fileID: 4466086459800951944, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 71dbfe16cde35c84395a7c4cd23d29f3, type: 2}
-    - target: {fileID: 4942502133528626906, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 39045f7d2faaf5949acceb4b0db20760, type: 2}
-    - target: {fileID: 5134808760534296579, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: fff3d078c3e69354b95d6493fc65fe60, type: 2}
-    - target: {fileID: 5464738713743265873, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: d3a651e784cd9a14ead5c439d3f3e54f, type: 2}
-    - target: {fileID: 6145619304865076208, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 90ee67ca6c433cb49ad3f2777d5156fb, type: 2}
-    - target: {fileID: 6602711283977044905, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6694459106549169018, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: c529a07c6738ec94397d830e0c0d9f97, type: 2}
-    - target: {fileID: 8337592072761241312, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 4e5a5b8440ac567418a9623ce73ace8a, type: 2}
-    - target: {fileID: 8863432155966649257, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1959235648}
     - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameMasterScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 09a87250bbf81e6449e7aeec56b9733a, type: 2}
-    - target: {fileID: 9140772078617553149, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Upgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1959235648}
     - target: {fileID: 9140772079819079298, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1846,26 +1420,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9140772079819079299, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9140772079819079302, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
       propertyPath: m_Name
       value: Shotgun Skill Tree Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 9140772079819079302, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2149676264939568059, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 953681231136377981, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 4265041511123182206, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 4218058571702745016, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 770460764980607266, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 1304133725039219995, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 3636275596123239800, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 1962395773138836008, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
-    - {fileID: 1340125120987128628, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcda3d590ce3b7e46a9a84912c9fda47, type: 3}
