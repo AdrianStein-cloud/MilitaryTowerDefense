@@ -1005,9 +1005,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
+      propertyPath: waves.Array.data[0].rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 127463416}
+    - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
+      propertyPath: waves.Array.data[0].count
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1321518618028449173, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: m_RootOrder
       value: 0
