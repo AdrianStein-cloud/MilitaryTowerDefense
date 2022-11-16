@@ -20,6 +20,8 @@ public class Turret : MonoBehaviour
     public float bulletSpeed = 70;
     public bool canShoot = true;
     public bool isIncendiary = false;
+    public float bulletSpread = 0.2f;
+
 
     [Header("Unity Setup Fields")]
     public Transform partToRotate;
@@ -30,7 +32,10 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
     public Transform rangeSprite;
     public GameObject flashEffect;
+    public GameObject bulletShellEffect;
     private GameMasterScript gameMaster;
+    public Animator animator;
+
 
     public bool isSelected = false;
 
@@ -99,6 +104,14 @@ public class Turret : MonoBehaviour
     {
         if (canShoot)
         {
+            GameObject flashEffectInstance = (GameObject)Instantiate(flashEffect, firePoint.position, Quaternion.LookRotation(firePoint.position - startOfGun.position, Vector3.up));
+            ParticleSystem.ShapeModule shapeModule = flashEffectInstance.GetComponent<ParticleSystem>().shape;
+            shapeModule.angle = bulletSpread * 100;
+            Destroy(flashEffectInstance, 1);
+
+            GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
+            Destroy(shellEffectInstance, 1);
+
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
             bullet.damage = damage;
@@ -108,6 +121,10 @@ public class Turret : MonoBehaviour
             if (bullet != null)
             {
                 bullet.Seek(firePoint.position - startOfGun.position);
+            }
+
+            if(animator != null){
+                animator.SetTrigger("Shoot");
             }
         }
     }
