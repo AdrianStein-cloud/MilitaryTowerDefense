@@ -260,6 +260,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5171620176534302878, guid: 0e551f81e329e484983606d63d416516, type: 3}
   firePoint: {fileID: 9026101490209558956}
   rangeSprite: {fileID: 872144686370915094}
+  flashEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
   isSelected: 0
   upgrades: []
   numberOfBulletsPerShot: 7

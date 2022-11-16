@@ -27,6 +27,11 @@ public class Shotgun : Turret
     {
         if (canShoot)
         {
+            GameObject effectInstance = (GameObject)Instantiate(flashEffect, firePoint.position, Quaternion.LookRotation(firePoint.position - startOfGun.position, Vector3.up));
+            ParticleSystem.ShapeModule shapeModule = effectInstance.GetComponent<ParticleSystem>().shape;
+            shapeModule.angle = bulletSpread * 100;
+            Destroy(effectInstance, 1);
+            
             for(int i = 0; i < numberOfBulletsPerShot; i++){
                 GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                 Bullet bullet = bulletGO.GetComponent<Bullet>();

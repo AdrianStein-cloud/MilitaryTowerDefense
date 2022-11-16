@@ -29,6 +29,7 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public Transform rangeSprite;
+    public GameObject flashEffect;
     private GameMasterScript gameMaster;
 
     public bool isSelected = false;
@@ -103,6 +104,7 @@ public class Turret : MonoBehaviour
             bullet.damage = damage;
             bullet.speed = bulletSpeed;
             bullet.lifetime = bulletLifeTime;
+
             if (bullet != null)
             {
                 bullet.Seek(firePoint.position - startOfGun.position);
