@@ -48,8 +48,8 @@ MonoBehaviour:
   waves:
   - name: Round 1
     enemy: {fileID: 4934811982760234331, guid: 9ce18b5d4b6ad324b969df324d94eb8e, type: 3}
-    count: 100
-    rate: 10
+    count: 10
+    rate: 1
   spawnPoints:
   - {fileID: 0}
   timeBetweenWaves: 1
