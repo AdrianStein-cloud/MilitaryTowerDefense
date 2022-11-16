@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1372,15 +1372,15 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 16191
-        ctime2: 34117
-        ctime3: 57054
+        ctime1: 23901
+        ctime2: 41634
+        ctime3: 59753
         ctime4: 65535
         ctime5: 65535
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 43947
+        atime1: 4241
         atime2: 65535
         atime3: 0
         atime4: 0
