@@ -52,7 +52,7 @@ public class GameMasterScript : MonoBehaviour
     }
 
     public int GetMoney() => money;
-    
+
     void Start(){
         SetSelectedTurret(null);
         moneyTextField.text = "" + money;
@@ -62,12 +62,18 @@ public class GameMasterScript : MonoBehaviour
     public void OpenSkillTree(){
         if(skillTreeOpen){
             skillTreeOpen = false;
-            shotgunSkillTreeCanvas.gameObject.SetActive(false);
+            foreach(SkillTreeButtonScript script in shotgunSkillTreeCanvas.gameObject.GetComponentsInChildren<SkillTreeButtonScript>()){
+                script.DisableInteractable();
+            }
             Time.timeScale = 1;
+            shotgunSkillTreeCanvas.gameObject.SetActive(false);
         }
         else if(selectedTurret is Shotgun){
             skillTreeOpen = true;
             shotgunSkillTreeCanvas.gameObject.SetActive(true);
+            // foreach(SkillTreeButtonScript button in selectedTurret.upgrades.ToArray()){
+            //     button.UnlockButtons();
+            // }
             Time.timeScale = 0;
         }
     }

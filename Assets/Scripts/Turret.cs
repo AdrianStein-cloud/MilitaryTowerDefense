@@ -33,7 +33,7 @@ public class Turret : MonoBehaviour
 
     public bool isSelected = false;
 
-    public List<Upgrade> upgrades = new List<Upgrade>();
+    public List<SkillTreeButtonScript> upgrades = new List<SkillTreeButtonScript>();
 
     void Start()
     {
