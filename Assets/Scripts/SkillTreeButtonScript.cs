@@ -28,5 +28,7 @@ public class SkillTreeButtonScript : MonoBehaviour
     public void DisableInteractable(){
         if(!isStarter)
             thisButton.interactable = false;
+        else
+            thisButton.interactable = true;
     }
 }

@@ -66,18 +66,18 @@ public class GameMasterScript : MonoBehaviour
     public void OpenSkillTree(){
         if(skillTreeOpen){
             skillTreeOpen = false;
-            foreach(SkillTreeButtonScript script in shotgunSkillTreeCanvas.gameObject.GetComponentsInChildren<SkillTreeButtonScript>()){
-                script.DisableInteractable();
-            }
             Time.timeScale = 1;
             shotgunSkillTreeCanvas.gameObject.SetActive(false);
         }
         else if(selectedTurret is Shotgun){
             skillTreeOpen = true;
             shotgunSkillTreeCanvas.gameObject.SetActive(true);
-            // foreach(SkillTreeButtonScript button in selectedTurret.upgrades.ToArray()){
-            //     button.UnlockButtons();
-            // }
+            foreach(SkillTreeButtonScript script in shotgunSkillTreeCanvas.gameObject.GetComponentsInChildren<SkillTreeButtonScript>()){
+                script.DisableInteractable();
+            }
+            foreach(SkillTreeButtonScript button in selectedTurret.upgrades.ToArray()){
+                button.UnlockButtons();
+            }
             Time.timeScale = 0;
         }
     }
