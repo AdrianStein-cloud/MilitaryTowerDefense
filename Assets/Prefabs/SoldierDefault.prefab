@@ -49,6 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3457156016581247286}
+  worth: 10
+  gameMaster: {fileID: 0}
+  dead: 0
 --- !u!58 &7427219227448660344
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using System;
 public abstract class Enemy : MonoBehaviour, IComparable<Enemy>
 {
     public virtual float health {get; set;}
-    public virtual float maxHealth {get;}
+    public virtual float maxHealth {get; set;}
     public virtual int damagePoint {get;}
     public virtual float speed {get;}
     public HealthBar healthBar;

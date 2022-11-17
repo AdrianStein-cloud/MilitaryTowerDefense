@@ -1,38 +1,41 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour {
 
-	public enum SpawnState { SPAWNING, WAITING, COUNTING };
+	public enum SpawnState { SPAWNING, WAITING, PAUSE};
 
 	[System.Serializable]
 	public class Wave
 	{
-		public string name;
 		public Transform enemy;
 		public int count;
 		public float rate;
+		public float timeToNextWave;
+		public int repeat;
 	}
 
-	public Wave[] waves;
-	private int nextWave = 0;
-	public int NextWave
+	[System.Serializable]
+	public class Round{
+		public string name;
+		public Wave[] waves;
+	}
+
+	public Round[] rounds;
+	public TextMeshProUGUI roundTextField;
+	public Button startRoundButton;
+	private int nextRound = 0;
+	public int NextRound
 	{
-		get { return nextWave + 1; }
+		get { return nextRound + 1; }
 	}
 
 	public Transform[] spawnPoints;
-
-	public float timeBetweenWaves = 5f;
-	private float waveCountdown;
-	public float WaveCountdown
-	{
-		get { return waveCountdown; }
-	}
-
 	private float searchCountdown = 1f;
 
-	private SpawnState state = SpawnState.COUNTING;
+	private SpawnState state = SpawnState.PAUSE;
 	public SpawnState State
 	{
 		get { return state; }
@@ -45,7 +48,7 @@ public class WaveSpawner : MonoBehaviour {
 			Debug.LogError("No spawn points referenced.");
 		}
 
-		waveCountdown = timeBetweenWaves;
+		UpdateRoundTextField();
 	}
 
 	void Update()
@@ -61,36 +64,30 @@ public class WaveSpawner : MonoBehaviour {
 				return;
 			}
 		}
+	}
 
-		if (waveCountdown <= 0)
-		{
-			if (state != SpawnState.SPAWNING)
-			{
-				StartCoroutine( SpawnWave ( waves[nextWave] ) );
-			}
-		}
-		else
-		{
-			waveCountdown -= Time.deltaTime;
-		}
+	public void StartNextRound(){
+		startRoundButton.gameObject.SetActive(false);
+		StartCoroutine( SpawnRound ( rounds[nextRound] ) );
 	}
 
 	void WaveCompleted()
 	{
+		state = SpawnState.PAUSE;
 		Debug.Log("Wave Completed!");
+		startRoundButton.gameObject.SetActive(true);
 
-		state = SpawnState.COUNTING;
-		waveCountdown = timeBetweenWaves;
-
-		if (nextWave + 1 > waves.Length - 1)
+		if (nextRound + 1 > rounds.Length - 1)
 		{
-			nextWave = 0;
+			nextRound = 0;
 			Debug.Log("ALL WAVES COMPLETE! Looping...");
 		}
 		else
 		{
-			nextWave++;
+			nextRound++;
 		}
+
+		UpdateRoundTextField();
 	}
 
 	bool EnemyIsAlive()
@@ -109,13 +106,21 @@ public class WaveSpawner : MonoBehaviour {
 
 	IEnumerator SpawnWave(Wave _wave)
 	{
-		Debug.Log("Spawning Wave: " + _wave.name);
-		state = SpawnState.SPAWNING;
-
 		for (int i = 0; i < _wave.count; i++)
 		{
 			SpawnEnemy(_wave.enemy);
 			yield return new WaitForSeconds( 1f/_wave.rate );
+		}
+	}
+
+	IEnumerator SpawnRound(Round _round){
+		state = SpawnState.SPAWNING;
+
+		foreach(Wave _wave in _round.waves){
+			for(int i = _wave.repeat; i >= 0; i--){
+				yield return SpawnWave(_wave);
+				yield return new WaitForSeconds( _wave.timeToNextWave );
+			}
 		}
 
 		state = SpawnState.WAITING;
@@ -128,7 +133,15 @@ public class WaveSpawner : MonoBehaviour {
 		Debug.Log("Spawning Enemy: " + _enemy.name);
 
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-		Instantiate(_enemy, _sp.position, _sp.rotation);
+		Enemy enemy = Instantiate(_enemy, _sp.position, _sp.rotation).gameObject.GetComponent<Enemy>();
+		float maxHealth = enemy.maxHealth;
+		enemy.maxHealth = maxHealth * (1f + (nextRound/10f));
+		print((1f + (nextRound/10f)));
+		print(enemy.maxHealth);
+		enemy.health = enemy.maxHealth;
 	}
 
+	void UpdateRoundTextField(){
+		roundTextField.text = (nextRound + 1) + "/" + rounds.Length;
+	}
 }

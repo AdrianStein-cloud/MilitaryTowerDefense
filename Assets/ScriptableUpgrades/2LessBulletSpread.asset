@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fb92d01e3155947afd4bda7554c582, type: 3}
   m_Name: 2LessBulletSpread
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 500
   desctription: 
   title: Less Bullet Spread 2

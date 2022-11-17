@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 public class GameMasterScript : MonoBehaviour
 {
     private Turret selectedTurret = null;
-    private int money = 0;
+    private int money = 500;
     public TextMeshProUGUI moneyTextField;
     public Button skillTreeButton;
     public Canvas shotgunSkillTreeCanvas;

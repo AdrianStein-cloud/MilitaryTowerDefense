@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de6cc51f1e1de845874a61a2fe64efb, type: 3}
   m_Name: BaseIncendiary 1
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 2000
   desctription: 
   title: Incendiary Shells
