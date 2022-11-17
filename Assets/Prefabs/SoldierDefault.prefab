@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1131168267763482392}
-  - component: {fileID: 1131168267763482406}
   - component: {fileID: 7427219227448660344}
+  - component: {fileID: 7153065641436070399}
   m_Layer: 0
   m_Name: SoldierDefault
   m_TagString: Enemy
@@ -36,22 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1131168267763482406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131168267763482407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae04383622cca3c46abb18e6101e8792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 3457156016581247286}
-  worth: 10
-  gameMaster: {fileID: 0}
-  dead: 0
 --- !u!58 &7427219227448660344
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -68,6 +52,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.009414428}
   serializedVersion: 2
   m_Radius: 0.8363464
+--- !u!114 &7153065641436070399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131168267763482407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770e34b8fedf2c5428da3d81f44ad359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxHealth: 5
+  damagePoint: 1
+  speed: 4
+  healthBar: {fileID: 3457156016581247286}
+  worth: 10
+  gameMaster: {fileID: 0}
+  dead: 0
 --- !u!1 &1663469537184244299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,6 +4978,10 @@ PrefabInstance:
     - target: {fileID: 6791299998019438715, guid: 1a25fc5dc4346414d910525a41190d72, type: 3}
       propertyPath: m_Name
       value: HealthBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884843895096345953, guid: 1a25fc5dc4346414d910525a41190d72, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8355174137980677041, guid: 1a25fc5dc4346414d910525a41190d72, type: 3}
       propertyPath: m_Pivot.x

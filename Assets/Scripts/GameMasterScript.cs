@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
+ using UnityEngine.SceneManagement;
 
 public class GameMasterScript : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameMasterScript : MonoBehaviour
     public bool skillTreeOpen = false;
     public bool towerIsBeingPlaced = false;
     public BuyTower buyTowerSelected;
+    public GameObject cashInputField;
     public void SetSelectedTurret(Turret turret){
         if(towerIsBeingPlaced){
             return;
@@ -50,6 +52,10 @@ public class GameMasterScript : MonoBehaviour
     void Update(){
         if(towerIsBeingPlaced){
             skillTreeButton.gameObject.SetActive(false);
+        }
+        if(cashInputField.GetComponent<TMP_InputField>().text != null){
+            if(int.TryParse(cashInputField.GetComponent<TMP_InputField>().text, out int result))
+            money = result;
         }
     }
 
@@ -93,5 +99,10 @@ public class GameMasterScript : MonoBehaviour
             }
             Time.timeScale = 0;
         }
+    }
+
+    public void RestartLevel(){
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

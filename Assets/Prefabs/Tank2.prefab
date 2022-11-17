@@ -4885,7 +4885,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cb8a07a6cde4a204d9462df9e3795e53, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6268e7abf0e89704687427913f698d5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4908,7 +4908,7 @@ GameObject:
   - component: {fileID: 759555987566794227}
   - component: {fileID: 7354115332978930879}
   m_Layer: 0
-  m_Name: TankDefault
+  m_Name: Tank2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4944,15 +4944,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e6bca44e2a16a4e81047dded902a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 60
-  maxHealth: 60
+  health: 300
+  maxHealth: 300
   damagePoint: 10
   speed: 1.5
   healthBar: {fileID: 2532807418726014369}
-  worth: 100
+  worth: 200
   gameMaster: {fileID: 0}
   dead: 0
-  soldierPrefab: {fileID: 1131168267763482407, guid: 5fcb1cf2e76985a4782cd9e1d4a49264, type: 3}
+  soldierPrefab: {fileID: 1131168267763482407, guid: c9c5f6c82e0d99149a2b81f982858ac7, type: 3}
 --- !u!61 &7354115332978930879
 BoxCollider2D:
   m_ObjectHideFlags: 0

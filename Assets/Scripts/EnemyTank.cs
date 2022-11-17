@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class EnemyTank : Enemy
 {
-    private float _health = 40;
-    private float _maxHealth = 40;
-    public override int damagePoint => 30;
-    public override float speed => 2;
-    public override float health{
-        get { return _health; }
-        set { _health = value; }
-    }
-    public override float maxHealth{
-        get { return _maxHealth; }
-        set { _maxHealth = value; }
-    }
     public GameObject soldierPrefab;
 
     public override void TakeDamage(float damagePoint){

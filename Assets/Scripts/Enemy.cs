@@ -4,12 +4,12 @@ using UnityEngine;
 using PathCreation;
 using System;
 
-public abstract class Enemy : MonoBehaviour, IComparable<Enemy>
+public class Enemy : MonoBehaviour, IComparable<Enemy>
 {
-    public virtual float health {get; set;}
-    public virtual float maxHealth {get; set;}
-    public virtual int damagePoint {get;}
-    public virtual float speed {get;}
+    public float health;
+    public float maxHealth;
+    public int damagePoint;
+    public float speed;
     public HealthBar healthBar;
 
     private PathCreator pathCreator;
@@ -50,6 +50,7 @@ public abstract class Enemy : MonoBehaviour, IComparable<Enemy>
             0,
             transform.eulerAngles.x
         );
+
         healthBar.transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
         healthBar.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.x * -1);
 

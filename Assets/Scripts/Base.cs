@@ -5,15 +5,21 @@ using TMPro;
 
 public class Base : MonoBehaviour
 {
-    public int health = 100;
+    public int health = 50;
+    public Canvas gameOverCanvas;
 
     public void DamageBase(int damagePoint){
         health -= damagePoint;
         healthDisplay.text = "" + health;
+        if(health <= 0){
+            gameOverCanvas.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     void Start(){
         DamageBase(0);
+        gameOverCanvas.gameObject.SetActive(false);
     }
 
     [SerializeField]

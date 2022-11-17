@@ -26,6 +26,7 @@ public class WaveSpawner : MonoBehaviour {
 	public Round[] rounds;
 	public TextMeshProUGUI roundTextField;
 	public Button startRoundButton;
+	public GameObject roundInputField;
 	private int nextRound = 0;
 	public int NextRound
 	{
@@ -68,6 +69,8 @@ public class WaveSpawner : MonoBehaviour {
 
 	public void StartNextRound(){
 		startRoundButton.gameObject.SetActive(false);
+		if(int.TryParse(roundInputField.GetComponent<TMP_InputField>().text, out int result))
+                nextRound = result - 1;
 		StartCoroutine( SpawnRound ( rounds[nextRound] ) );
 	}
 
@@ -136,7 +139,7 @@ public class WaveSpawner : MonoBehaviour {
 		Enemy enemy = Instantiate(_enemy, _sp.position, _sp.rotation).gameObject.GetComponent<Enemy>();
 		float maxHealth = enemy.maxHealth;
 		enemy.maxHealth = maxHealth * (1f + (nextRound/10f));
-		print((1f + (nextRound/10f)));
+		print((1f + (nextRound/8f)));
 		print(enemy.maxHealth);
 		enemy.health = enemy.maxHealth;
 	}
