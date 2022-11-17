@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 2295446474791276212}
   - component: {fileID: 3950327257059922577}
   - component: {fileID: 2307679583538823680}
+  - component: {fileID: 1589436932}
   m_Layer: 5
   m_Name: Incendiary Damage 1
   m_TagString: Untagged
@@ -412,6 +413,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1589436932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277920746644162647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 271759886028636878}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &324484362243397235
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +442,7 @@ GameObject:
   - component: {fileID: 5860972517868307300}
   - component: {fileID: 1752153520065920921}
   - component: {fileID: 4041112352259836675}
+  - component: {fileID: 1613738365}
   m_Layer: 5
   m_Name: MoreBullets1
   m_TagString: Untagged
@@ -546,6 +565,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1613738365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324484362243397235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 5464738713743265873}
+  gameMaster: {fileID: 0}
+  isStarter: 1
+  upgrade: {fileID: 0}
 --- !u!1 &585059204454377648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1239,7 @@ GameObject:
   - component: {fileID: 1893851113552087402}
   - component: {fileID: 2992634230091913517}
   - component: {fileID: 6602711283977044905}
+  - component: {fileID: 434603664}
   m_Layer: 5
   m_Name: FasterFireRate2
   m_TagString: Untagged
@@ -1325,6 +1362,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &434603664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004931055004143401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock: []
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &2156675832606544228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1390,7 @@ GameObject:
   - component: {fileID: 2655876755994890712}
   - component: {fileID: 8853088834825103585}
   - component: {fileID: 4942502133528626906}
+  - component: {fileID: 433910672}
   m_Layer: 5
   m_Name: LessBulletSpread2
   m_TagString: Untagged
@@ -1459,6 +1513,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &433910672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156675832606544228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 6145619304865076208}
+  - {fileID: 8863432155966649257}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &2346091115219129435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1910,7 @@ GameObject:
   - component: {fileID: 8586042642702806953}
   - component: {fileID: 7719885094358745761}
   - component: {fileID: 4466086459800951944}
+  - component: {fileID: 1777292441}
   m_Layer: 5
   m_Name: Range 1
   m_TagString: Untagged
@@ -1960,6 +2033,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1777292441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194549986127743358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 8337592072761241312}
+  - {fileID: 9140772078617553149}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &4634275514080168740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,6 +2278,7 @@ GameObject:
   - component: {fileID: 3396016891208448183}
   - component: {fileID: 6830275252516214250}
   - component: {fileID: 5134808760534296579}
+  - component: {fileID: 1379319781}
   m_Layer: 5
   m_Name: Incendiary Damage 3
   m_TagString: Untagged
@@ -2309,6 +2401,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1379319781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5084449866568988458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock: []
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &5087756225248334585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2905,7 @@ GameObject:
   - component: {fileID: 4063393481512311856}
   - component: {fileID: 2872210307092796220}
   - component: {fileID: 1914341064836880432}
+  - component: {fileID: 1970975559}
   m_Layer: 5
   m_Name: MoreBullets2
   m_TagString: Untagged
@@ -2919,6 +3028,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1970975559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680688182573553899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 553048835601084105}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &5723448857314366594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3007,6 +3133,7 @@ GameObject:
   - component: {fileID: 976306491559313021}
   - component: {fileID: 2778278031123303939}
   - component: {fileID: 6145619304865076208}
+  - component: {fileID: 318726926}
   m_Layer: 5
   m_Name: LessBulletSpread3
   m_TagString: Untagged
@@ -3129,6 +3256,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &318726926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769407454851747494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock: []
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &5961848463441409282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,6 +3638,7 @@ GameObject:
   - component: {fileID: 5066612540472794733}
   - component: {fileID: 2899422460771882949}
   - component: {fileID: 271759886028636878}
+  - component: {fileID: 72463210}
   m_Layer: 5
   m_Name: Incendiary Damage 2
   m_TagString: Untagged
@@ -3617,6 +3761,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &72463210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442424497857758038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 5134808760534296579}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &6463948735017435472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,6 +3826,7 @@ GameObject:
   - component: {fileID: 8770218558522501160}
   - component: {fileID: 3024673746780265489}
   - component: {fileID: 553048835601084105}
+  - component: {fileID: 2039589719}
   m_Layer: 5
   m_Name: MoreBullets3
   m_TagString: Untagged
@@ -3787,6 +3949,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2039589719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475047173195106712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock: []
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &6482994825744367842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4346,6 +4524,7 @@ GameObject:
   - component: {fileID: 6124882812788660881}
   - component: {fileID: 4830651905285929687}
   - component: {fileID: 5464738713743265873}
+  - component: {fileID: 999551541}
   m_Layer: 5
   m_Name: LessBulletSpread1
   m_TagString: Untagged
@@ -4468,6 +4647,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &999551541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207091510850035012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 4942502133528626906}
+  - {fileID: 1914341064836880432}
+  - {fileID: 4466086459800951944}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &7219970860743058815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,6 +4716,7 @@ GameObject:
   - component: {fileID: 5178706558203442603}
   - component: {fileID: 904436248057117198}
   - component: {fileID: 8337592072761241312}
+  - component: {fileID: 2114912891}
   m_Layer: 5
   m_Name: Range 2
   m_TagString: Untagged
@@ -4640,6 +4839,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2114912891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431264436552389793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock: []
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &7705527487738831480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4804,6 +5019,7 @@ GameObject:
   - component: {fileID: 5838950607365452631}
   - component: {fileID: 480999842452988482}
   - component: {fileID: 8863432155966649257}
+  - component: {fileID: 967661894}
   m_Layer: 5
   m_Name: FasterFireRate1
   m_TagString: Untagged
@@ -4926,6 +5142,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &967661894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164736817412788864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 6602711283977044905}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &9140772078617553151
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +5172,7 @@ GameObject:
   - component: {fileID: 9140772078617553148}
   - component: {fileID: 9140772078617553149}
   - component: {fileID: 542700624}
+  - component: {fileID: 862702929}
   m_Layer: 5
   m_Name: Incendiary Shells
   m_TagString: Untagged
@@ -5074,6 +5308,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousUpgrades: []
+--- !u!114 &862702929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140772078617553151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf1418177ee23e4bb8e3e085cad8b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsToUnlock:
+  - {fileID: 2307679583538823680}
+  gameMaster: {fileID: 0}
+  isStarter: 0
+  upgrade: {fileID: 0}
 --- !u!1 &9140772079056974090
 GameObject:
   m_ObjectHideFlags: 0

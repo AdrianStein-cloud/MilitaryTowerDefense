@@ -9,7 +9,7 @@ public class Base : MonoBehaviour
 
     public void DamageBase(int damagePoint){
         health -= damagePoint;
-        healthDisplay.text = "Health: " + health;
+        healthDisplay.text = "" + health;
     }
 
     void Start(){

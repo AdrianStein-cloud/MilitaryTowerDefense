@@ -38,10 +38,12 @@ public class Turret : MonoBehaviour
 
 
     public bool isSelected = false;
+    public bool isBeingPlaced = false;
+    public bool canBePlaced = true;
 
     public List<SkillTreeButtonScript> upgrades = new List<SkillTreeButtonScript>();
 
-    void Start()
+    void Awake()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         UpdateRange();
@@ -139,20 +141,48 @@ public class Turret : MonoBehaviour
         Handles.DrawWireDisc(transform.position, new Vector3(0, 0, 0) , range);
     }
 
+    public void RangeVisible(bool isEnabled){
+        if(rangeSprite != null){
+            rangeSprite.GetComponent<SpriteRenderer>().enabled = isEnabled;
+        }
+    }
+
+    public void SetSelectedTurret(Turret turret){
+        gameMaster.SetSelectedTurret(turret);
+    }
+
     public void OnMouseDown(){
-        SpriteRenderer spriteRenderer = rangeSprite.GetComponent<SpriteRenderer>();
-        if(!gameMaster.skillTreeOpen){
+        if(!gameMaster.skillTreeOpen && !gameMaster.towerIsBeingPlaced){
             if(isSelected){
-                spriteRenderer.enabled = false;
-                isSelected = false;
-                gameMaster.SetSelectedTurret(null);
+                print("Tower Deselected");
+                RangeVisible(false);
+                SetSelectedTurret(null);
             }
             else{
-                spriteRenderer.enabled = true;
-                isSelected = true;
-                gameMaster.SetSelectedTurret(this);
+                print("Tower selected");
+                RangeVisible(true);
+                SetSelectedTurret(this);
             }
         }
-        
+    }
+
+    void OnTriggerStay2D(Collider2D collider2D){
+        if(isBeingPlaced){
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color (1, 0, 0, 1);
+            canBePlaced = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider2D){
+        if(isBeingPlaced){
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color (1, 1, 1, 1);
+            canBePlaced = true;
+        }
+    }
+
+    public void IsBeingPlaced(bool isBeingPlaced){
+        this.isBeingPlaced = isBeingPlaced;
+        gameMaster.towerIsBeingPlaced = isBeingPlaced;
+        gameMaster.skillTreeButton.gameObject.SetActive(true);
     }
 }

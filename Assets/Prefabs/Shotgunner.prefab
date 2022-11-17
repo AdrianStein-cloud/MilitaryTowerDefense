@@ -158,9 +158,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2500059291342352131}
-  - component: {fileID: 3821873142682145527}
   - component: {fileID: 5742421907161870945}
   - component: {fileID: -585895693639019730}
+  - component: {fileID: 1856949337284240433}
   m_Layer: 7
   m_Name: Shotgunner
   m_TagString: Untagged
@@ -186,32 +186,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3821873142682145527
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2500059291342352129}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02625537, y: 0.9305601}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 10}
-    newSize: {x: 10, y: 10}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.510307, y: 8.22209}
-  m_EdgeRadius: 0
 --- !u!50 &5742421907161870945
 Rigidbody2D:
   serializedVersion: 4
@@ -263,12 +237,29 @@ MonoBehaviour:
   rangeSprite: {fileID: 872144686370915094}
   flashEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
   bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
+  animator: {fileID: 0}
   isSelected: 0
   upgrades: []
   numberOfBulletsPerShot: 7
   spriteRenderer: {fileID: 2500059289808160390}
   shotgunnerDefault: {fileID: 21300000, guid: bdf1240bb6366bf44bf15e7555f50e61, type: 3}
   shotgunnerIncendiary: {fileID: 21300000, guid: f1092fa3c5cb09845a279858e128bd1b, type: 3}
+--- !u!58 &1856949337284240433
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2500059291342352129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000059604645, y: -0.4428628}
+  serializedVersion: 2
+  m_Radius: 3.079025
 --- !u!1 &2550030014579796911
 GameObject:
   m_ObjectHideFlags: 0

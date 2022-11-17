@@ -15,24 +15,40 @@ public class GameMasterScript : MonoBehaviour
     public Canvas shotgunSkillTreeCanvas;
     public Canvas mainCanvas;
     public bool skillTreeOpen = false;
+    public bool towerIsBeingPlaced = false;
+    public BuyTower buyTowerSelected;
     public void SetSelectedTurret(Turret turret){
+        if(towerIsBeingPlaced){
+            return;
+        }
+        if(selectedTurret != null){
+            selectedTurret.RangeVisible(false);
+        }
         if(selectedTurret == turret && turret is not null){
+            selectedTurret.isSelected = false;
+            selectedTurret.RangeVisible(false);
             selectedTurret = null;
-            turret.rangeSprite.gameObject.SetActive(false);
+            skillTreeButton.gameObject.SetActive(false);
         }
         else{
             if(selectedTurret is not null){
-            selectedTurret.rangeSprite.gameObject.SetActive(false);
+                selectedTurret.RangeVisible(false);
+                selectedTurret.isSelected = false;
             }
             selectedTurret = turret;
             if(selectedTurret is not null){
-            selectedTurret.rangeSprite.gameObject.SetActive(true);
+                selectedTurret.RangeVisible(true);
+                selectedTurret.isSelected = true;
+                skillTreeButton.gameObject.SetActive(true);
+            }
+            else{
+                skillTreeButton.gameObject.SetActive(false);
             }
         }
-        if(selectedTurret is not null){
-            skillTreeButton.gameObject.SetActive(true);
-        }
-        else{
+    }
+
+    void Update(){
+        if(towerIsBeingPlaced){
             skillTreeButton.gameObject.SetActive(false);
         }
     }
@@ -43,15 +59,12 @@ public class GameMasterScript : MonoBehaviour
 
     public void AddUpgrade(Upgrade upgrade){
         upgrade.ApplyUpgrade(selectedTurret);
-        TextMeshProUGUI buttonTextField = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>();
-        buttonTextField.text = upgrade.title + " " + upgrade.cost + "$";
         selectedTurret.UpdateGraphics();
         UpdateMoney(-upgrade.cost);
     }
 
     public void UpdateMoney(int newMoney){
         this.money += newMoney;
-        print("Money updated");
         moneyTextField.text = "" + money;
     }
 
