@@ -21,6 +21,7 @@ public class Turret : MonoBehaviour
     public bool canShoot = true;
     public bool isIncendiary = false;
     public float bulletSpread = 0.2f;
+    public int sellPrice;
 
 
     [Header("Unity Setup Fields")]
@@ -52,6 +53,12 @@ public class Turret : MonoBehaviour
 
     public void UpdateRange(){
         rangeSprite.localScale = new Vector3(range * 2.15f, range * 2.15f, 1);
+    }
+
+    public void AddUpgrade(SkillTreeButtonScript upgrade){
+        upgrades.Add(upgrade);
+        sellPrice += upgrade.upgrade.cost/2;
+        gameMaster.UpdateSellPrice();
     }
 
     void UpdateTarget()
@@ -183,6 +190,6 @@ public class Turret : MonoBehaviour
     public void IsBeingPlaced(bool isBeingPlaced){
         this.isBeingPlaced = isBeingPlaced;
         gameMaster.towerIsBeingPlaced = isBeingPlaced;
-        gameMaster.skillTreeButton.gameObject.SetActive(true);
+        gameMaster.UpdateTowerButtons(true);
     }
 }

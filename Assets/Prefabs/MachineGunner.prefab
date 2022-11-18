@@ -250,6 +250,7 @@ MonoBehaviour:
   canShoot: 1
   isIncendiary: 0
   bulletSpread: 0.2
+  sellPrice: 250
   partToRotate: {fileID: 2500059290423760888}
   startOfGun: {fileID: 881313600966702228}
   turnSpeed: 10

@@ -33,7 +33,7 @@ public class SkillTreeButtonScript : MonoBehaviour
         if(upgrade.cost <= gameMaster.GetMoney()){
             gameMaster.AddUpgrade(upgrade);
             Turret turret = gameMaster.GetSelectedTurret();
-            turret.upgrades.Add(this);
+            turret.AddUpgrade(this);
             UnlockButtons();
         }
     }

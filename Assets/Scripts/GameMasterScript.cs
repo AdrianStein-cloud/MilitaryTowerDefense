@@ -13,12 +13,14 @@ public class GameMasterScript : MonoBehaviour
     private int money = 600;
     public TextMeshProUGUI moneyTextField;
     public Button skillTreeButton;
+    public Button sellTowerButton;
     public Canvas shotgunSkillTreeCanvas;
     public Canvas mainCanvas;
     public bool skillTreeOpen = false;
     public bool towerIsBeingPlaced = false;
     public BuyTower buyTowerSelected;
     public GameObject cashInputField;
+    public GameObject pauseMenu;
     public void SetSelectedTurret(Turret turret){
         if(towerIsBeingPlaced){
             return;
@@ -30,7 +32,7 @@ public class GameMasterScript : MonoBehaviour
             selectedTurret.isSelected = false;
             selectedTurret.RangeVisible(false);
             selectedTurret = null;
-            skillTreeButton.gameObject.SetActive(false);
+            UpdateTowerButtons(false);
         }
         else{
             if(selectedTurret is not null){
@@ -41,17 +43,29 @@ public class GameMasterScript : MonoBehaviour
             if(selectedTurret is not null){
                 selectedTurret.RangeVisible(true);
                 selectedTurret.isSelected = true;
-                skillTreeButton.gameObject.SetActive(true);
+                UpdateTowerButtons(true);
             }
             else{
-                skillTreeButton.gameObject.SetActive(false);
+                UpdateTowerButtons(false);
             }
         }
     }
 
+    public void UpdateTowerButtons(bool isEnabled){
+        skillTreeButton.gameObject.SetActive(isEnabled);
+        sellTowerButton.gameObject.SetActive(isEnabled);
+        if(isEnabled){
+            UpdateSellPrice();
+        }
+    }
+
+    public void UpdateSellPrice(){
+        sellTowerButton.GetComponentInChildren<TextMeshProUGUI>().text = "Sell\n(" + selectedTurret.sellPrice + "$)";
+    }
+
     void Update(){
         if(towerIsBeingPlaced){
-            skillTreeButton.gameObject.SetActive(false);
+            UpdateTowerButtons(false);
         }
         if(cashInputField.GetComponent<TMP_InputField>().text != null){
             if(int.TryParse(cashInputField.GetComponent<TMP_InputField>().text, out int result))
@@ -80,6 +94,7 @@ public class GameMasterScript : MonoBehaviour
         SetSelectedTurret(null);
         moneyTextField.text = "" + money;
         shotgunSkillTreeCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void OpenSkillTree(){
@@ -87,10 +102,12 @@ public class GameMasterScript : MonoBehaviour
             skillTreeOpen = false;
             Time.timeScale = 1;
             shotgunSkillTreeCanvas.gameObject.SetActive(false);
+            sellTowerButton.gameObject.SetActive(true);
         }
         else if(selectedTurret is Shotgun){
             skillTreeOpen = true;
             shotgunSkillTreeCanvas.gameObject.SetActive(true);
+            sellTowerButton.gameObject.SetActive(false);
             foreach(SkillTreeButtonScript script in shotgunSkillTreeCanvas.gameObject.GetComponentsInChildren<SkillTreeButtonScript>()){
                 script.DisableInteractable();
             }
@@ -104,5 +121,25 @@ public class GameMasterScript : MonoBehaviour
     public void RestartLevel(){
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void PauseGame(){
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+
+    public void UnpauseGame(){
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+    }
+
+    public void ExitLevel(){
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void SellSelectedTower(){
+        UpdateMoney(selectedTurret.sellPrice);
+        Destroy(selectedTurret.gameObject);
+        SetSelectedTurret(null);
     }
 }
