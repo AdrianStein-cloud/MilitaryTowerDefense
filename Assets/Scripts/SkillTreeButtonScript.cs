@@ -27,13 +27,13 @@ public class SkillTreeButtonScript : MonoBehaviour
         foreach(Button button in buttonsToUnlock){
             button.interactable = true;
         }
-        Turret turret = gameMaster.GetSelectedTurret();
-        turret.upgrades.Add(this);
     }
 
     public void AddUpgrade(){
         if(upgrade.cost <= gameMaster.GetMoney()){
             gameMaster.AddUpgrade(upgrade);
+            Turret turret = gameMaster.GetSelectedTurret();
+            turret.upgrades.Add(this);
             UnlockButtons();
         }
     }

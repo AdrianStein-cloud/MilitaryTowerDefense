@@ -26,7 +26,7 @@ public class Turret : MonoBehaviour
     [Header("Unity Setup Fields")]
     public Transform partToRotate;
     public Transform startOfGun;
-    public float turnSpeed = 10f;
+    public float turnSpeed = 50f;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -138,7 +138,7 @@ public class Turret : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, range);
-        Handles.DrawWireDisc(transform.position, new Vector3(0, 0, 0) , range);
+        //Handles.DrawWireDisc(transform.position, new Vector3(0, 0, 0) , range);
     }
 
     public void RangeVisible(bool isEnabled){

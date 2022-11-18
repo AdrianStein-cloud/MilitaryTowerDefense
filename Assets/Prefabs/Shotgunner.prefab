@@ -239,6 +239,8 @@ MonoBehaviour:
   bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
   animator: {fileID: 0}
   isSelected: 0
+  isBeingPlaced: 0
+  canBePlaced: 1
   upgrades: []
   numberOfBulletsPerShot: 7
   spriteRenderer: {fileID: 2500059289808160390}
@@ -257,9 +259,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000059604645, y: -0.4428628}
+  m_Offset: {x: 0.00000059604645, y: -0.4596722}
   serializedVersion: 2
-  m_Radius: 3.079025
+  m_Radius: 2.5411522
 --- !u!1 &2550030014579796911
 GameObject:
   m_ObjectHideFlags: 0

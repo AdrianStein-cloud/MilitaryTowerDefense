@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071c85fb1e406dc4b97d6f201330e529, type: 3}
   m_Name: Range2
   m_EditorClassIdentifier: 
-  cost: 5000
+  cost: 2000
   desctription: 
   title: More Range 2

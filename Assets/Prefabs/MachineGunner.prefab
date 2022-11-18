@@ -179,9 +179,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2500059291342352131}
-  - component: {fileID: 3821873142682145527}
   - component: {fileID: 5742421907161870945}
   - component: {fileID: 3864275636556981306}
+  - component: {fileID: 7057690403203272492}
   m_Layer: 7
   m_Name: MachineGunner
   m_TagString: Untagged
@@ -207,32 +207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3821873142682145527
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2500059291342352129}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02625537, y: 0.9305601}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 10}
-    newSize: {x: 10, y: 10}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.510307, y: 8.22209}
-  m_EdgeRadius: 0
 --- !u!50 &5742421907161870945
 Rigidbody2D:
   serializedVersion: 4
@@ -271,8 +245,8 @@ MonoBehaviour:
   fireRate: 20
   damage: 1
   fireDamage: 0
-  bulletLifeTime: 20
-  bulletSpeed: 10
+  bulletLifeTime: 15
+  bulletSpeed: 20
   canShoot: 1
   isIncendiary: 0
   bulletSpread: 0.2
@@ -286,7 +260,25 @@ MonoBehaviour:
   bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
   animator: {fileID: 7166199813731917536}
   isSelected: 0
+  isBeingPlaced: 0
+  canBePlaced: 1
   upgrades: []
+--- !u!58 &7057690403203272492
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2500059291342352129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.47685862}
+  serializedVersion: 2
+  m_Radius: 2.5492048
 --- !u!1 &2550030014579796911
 GameObject:
   m_ObjectHideFlags: 0

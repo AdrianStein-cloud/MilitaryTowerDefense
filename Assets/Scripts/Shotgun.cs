@@ -32,7 +32,11 @@ public class Shotgun : Turret
 
             GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
             Destroy(shellEffectInstance, 1);
-            
+
+            var direction = firePoint.position - startOfGun.position;
+
+            float increase = bulletSpread / numberOfBulletsPerShot;
+
             for(int i = 0; i < numberOfBulletsPerShot; i++){
                 GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                 Bullet bullet = bulletGO.GetComponent<Bullet>();
@@ -41,9 +45,10 @@ public class Shotgun : Turret
                 bullet.lifetime = bulletLifeTime;
                 bullet.incendiary = isIncendiary;
                 bullet.fireDamage = fireDamage;
+                
                 if (bullet != null)
                 {
-                bullet.Seek((firePoint.position - startOfGun.position) + new Vector3(Random.Range(-bulletSpread, bulletSpread), 0, 0));
+                    bullet.Seek(Quaternion.Euler(0, 0, (i % 2 == 0 ? 1 : -1) * increase * Mathf.Ceil(i/2f) * 180) * direction);
                 }
             }
         }

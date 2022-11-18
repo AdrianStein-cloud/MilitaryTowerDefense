@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de6cc51f1e1de845874a61a2fe64efb, type: 3}
   m_Name: 1Incendiary
   m_EditorClassIdentifier: 
-  cost: 4000
+  cost: 1500
   desctription: 
   title: Incendiary Damage 1
+  fireDamage: 3

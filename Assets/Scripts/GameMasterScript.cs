@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 public class GameMasterScript : MonoBehaviour
 {
     private Turret selectedTurret = null;
-    private int money = 500;
+    private int money = 600;
     public TextMeshProUGUI moneyTextField;
     public Button skillTreeButton;
     public Canvas shotgunSkillTreeCanvas;
@@ -55,7 +55,7 @@ public class GameMasterScript : MonoBehaviour
         }
         if(cashInputField.GetComponent<TMP_InputField>().text != null){
             if(int.TryParse(cashInputField.GetComponent<TMP_InputField>().text, out int result))
-            money = result;
+                money = result;
         }
     }
 
