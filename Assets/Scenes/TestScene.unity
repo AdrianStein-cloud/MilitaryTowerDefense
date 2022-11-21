@@ -1665,7 +1665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: rounds.Array.size
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: waves.Array.data[0].rate
@@ -2149,7 +2149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: rounds.Array.data[13].waves.Array.data[0].rate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321518618028449172, guid: 15711af45f22ddc44a212cc8ce008e0a, type: 3}
       propertyPath: rounds.Array.data[13].waves.Array.data[1].rate
@@ -3148,7 +3148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917114937194098955, guid: 18444d441edf0924e896ab65e30b69b7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6428471532233375050, guid: 18444d441edf0924e896ab65e30b69b7, type: 3}
       propertyPath: m_fontSize
@@ -3288,7 +3288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818927454759373248, guid: 18444d441edf0924e896ab65e30b69b7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18444d441edf0924e896ab65e30b69b7, type: 3}
