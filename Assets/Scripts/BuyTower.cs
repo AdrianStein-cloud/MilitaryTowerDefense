@@ -51,7 +51,7 @@ public class BuyTower : MonoBehaviour
                 towerScript.SetSelectedTurret(towerScript);
             }
         }
-        if (Input.GetKey(shortcut))
+        if (Input.GetKey(shortcut) && !placingTower)
         {
             InstantiateTower();
         }
