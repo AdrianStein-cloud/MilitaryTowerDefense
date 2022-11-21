@@ -243,7 +243,7 @@ MonoBehaviour:
   isBeingPlaced: 0
   canBePlaced: 1
   upgrades: []
-  numberOfBulletsPerShot: 7
+  numberOfBulletsPerShot: 5
   spriteRenderer: {fileID: 2500059289808160390}
   shotgunnerDefault: {fileID: 21300000, guid: bdf1240bb6366bf44bf15e7555f50e61, type: 3}
   shotgunnerIncendiary: {fileID: 21300000, guid: f1092fa3c5cb09845a279858e128bd1b, type: 3}

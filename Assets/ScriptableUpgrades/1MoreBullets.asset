@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964c58b91ea676047a9aa82c4797dc88, type: 3}
   m_Name: 1MoreBullets
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 200
   desctription: 
   title: More Bullets 1
+  numberOfBulletsToAdd: 5

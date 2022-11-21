@@ -13,7 +13,6 @@ public class Turret : MonoBehaviour
     [Header("Turret Skills")]
     public float range = 15f;
     public float fireRate = 1f;
-    private float fireCountdown = 0f;
     public float damage = 20;
     public float fireDamage = 0;
     public float bulletLifeTime = 20;
@@ -27,7 +26,7 @@ public class Turret : MonoBehaviour
     [Header("Unity Setup Fields")]
     public Transform partToRotate;
     public Transform startOfGun;
-    public float turnSpeed = 50f;
+    public float turnSpeed = 500f;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -36,6 +35,9 @@ public class Turret : MonoBehaviour
     public GameObject bulletShellEffect;
     private GameMasterScript gameMaster;
     public Animator animator;
+    private AudioSource shootingSound;
+    public float fireCountdown = 0f;
+
 
 
     public bool isSelected = false;
@@ -49,6 +51,7 @@ public class Turret : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         UpdateRange();
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMasterScript>();
+        shootingSound = GetComponent<AudioSource>();
     }
 
     public void UpdateRange(){
@@ -86,11 +89,17 @@ public class Turret : MonoBehaviour
 
     void Update()
     {
+        fireCountdown -= Time.deltaTime;
+
         if(target == null)
         {
             return;
         }
 
+        RotateTurret();
+    }
+
+    public virtual void RotateTurret(){
         Vector3 dir = target.position - transform.position;
         Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 180) * dir;
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
@@ -98,15 +107,13 @@ public class Turret : MonoBehaviour
         {
             Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
             partToRotate.rotation = rotation;
-        }
 
-        if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
         }
-
-        fireCountdown -= Time.deltaTime;
     }
 
     public virtual void Shoot()
@@ -135,6 +142,7 @@ public class Turret : MonoBehaviour
             if(animator != null){
                 animator.SetTrigger("Shoot");
             }
+
         }
     }
 

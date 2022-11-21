@@ -71,6 +71,12 @@ public class GameMasterScript : MonoBehaviour
             if(int.TryParse(cashInputField.GetComponent<TMP_InputField>().text, out int result))
                 money = result;
         }
+        if(skillTreeOpen){
+            if (Input.GetKey("escape"))
+            {
+                OpenSkillTree();
+            }
+        }
     }
 
     public Turret GetSelectedTurret(){

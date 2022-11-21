@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     public float damage = 0;
     public float lifetime = 0;
     public bool incendiary = false;
-    public float fireDamage = 1;
+    public float fireDamage = 0;
+    public Turret owner;
 
     Vector3 dir;
 
@@ -37,7 +38,7 @@ public class Bullet : MonoBehaviour
         if(collider2D.tag == "Enemy"){
             collider2D.GetComponent<Enemy>().TakeDamage(damage);
             if(incendiary){
-                collider2D.GetComponent<Enemy>().Burn(fireDamage);
+                collider2D.GetComponent<Enemy>().Burn(fireDamage, owner);
             }
             GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir, Vector3.up));
             effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;

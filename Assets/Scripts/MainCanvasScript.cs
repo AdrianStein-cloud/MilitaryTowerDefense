@@ -44,4 +44,10 @@ public class MainCanvasScript : MonoBehaviour
             skillTreeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Skill Tree & Upgrades";
         }
     }
+
+    void Update(){
+        if(colorsFlipped = true && Input.GetKey("escape")){
+            FlipColors();
+        }
+    }
 }

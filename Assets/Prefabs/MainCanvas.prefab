@@ -2747,6 +2747,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: shortcut
+      value: q
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: towerCost
       value: 500
       objectReference: {fileID: 0}
@@ -2859,6 +2863,10 @@ PrefabInstance:
     - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: shortcut
+      value: w
       objectReference: {fileID: 0}
     - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: towerCost

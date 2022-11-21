@@ -15,3 +15,4 @@ MonoBehaviour:
   cost: 1000
   desctription: 
   title: More Bullets 3
+  numberOfBulletsToAdd: 5

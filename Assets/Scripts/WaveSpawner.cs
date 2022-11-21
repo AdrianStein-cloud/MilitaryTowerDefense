@@ -139,8 +139,7 @@ public class WaveSpawner : MonoBehaviour {
 		Enemy enemy = Instantiate(_enemy, _sp.position, _sp.rotation).gameObject.GetComponent<Enemy>();
 		float maxHealth = enemy.maxHealth;
 		enemy.maxHealth = maxHealth * (1f + (nextRound/StaticSceneClass.CrossSceneDifficulty));
-		print((1f + (nextRound/8f)));
-		print(enemy.maxHealth);
+		print("Enemy health: " + enemy.maxHealth);
 		enemy.health = enemy.maxHealth;
 	}
 

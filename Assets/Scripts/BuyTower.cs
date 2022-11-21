@@ -12,6 +12,7 @@ public class BuyTower : MonoBehaviour
     public GameMasterScript gameMasterScript;
     public int towerCost;
     public TextMeshProUGUI costTextField;
+    public string shortcut;
 
     public void InstantiateTower(){
         if(gameMasterScript.GetMoney() >= towerCost){
@@ -36,6 +37,10 @@ public class BuyTower : MonoBehaviour
 
     void Update(){
         if(placingTower){
+            if (Input.GetKey("escape") || Input.GetMouseButtonDown(1))
+            {
+                DestroyTower();
+            }
             Vector3 mouseCoords = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             tower.gameObject.transform.position = new Vector3(mouseCoords.x, mouseCoords.y, 0);
             if (Input.GetMouseButtonDown(0) && towerScript.canBePlaced){
@@ -43,7 +48,12 @@ public class BuyTower : MonoBehaviour
                 placingTower = false;
                 towerScript.canShoot = true;
                 towerScript.IsBeingPlaced(false);
+                towerScript.SetSelectedTurret(towerScript);
             }
+        }
+        if (Input.GetKey(shortcut))
+        {
+            InstantiateTower();
         }
     }
 

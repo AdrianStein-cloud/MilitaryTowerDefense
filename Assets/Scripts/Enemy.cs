@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
     public GameMasterScript gameMaster;
 
     public bool dead = false;
+    public List<Turret> listOfBurningTurrets = new List<Turret>();
 
     public void setDistanceTravelled(float distance){
         distanceTravelled = distance;
@@ -76,9 +77,13 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
         healthBar.UpdateHealthBar(health, maxHealth);
     }
 
-    public void Burn(float fireDamage){
+    public void Burn(float fireDamage, Turret turret){
         burning = true;
-        fireIntensity = fireDamage;
+        if(!listOfBurningTurrets.Contains(turret)){
+            fireIntensity += fireDamage;
+            print("FireIntensity: " + fireIntensity);
+            listOfBurningTurrets.Add(turret);
+        }
         ps.Play();
     }
 
