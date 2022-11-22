@@ -56,7 +56,7 @@ public class Shotgun : Turret
     }
 
     public override void RotateTurret(){
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = (Vector3)target - transform.position;
         Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 180) * dir;
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
         if(partToRotate != null)

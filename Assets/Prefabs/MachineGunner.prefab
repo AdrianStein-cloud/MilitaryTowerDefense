@@ -240,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719faf0a9cfd00c4d96edabad1162a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   range: 3
   fireRate: 20
   damage: 1
@@ -260,6 +259,7 @@ MonoBehaviour:
   flashEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
   bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
   animator: {fileID: 7166199813731917536}
+  fireCountdown: 0
   isSelected: 0
   isBeingPlaced: 0
   canBePlaced: 1

@@ -25,12 +25,16 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
     public bool dead = false;
     public List<Turret> listOfBurningTurrets = new List<Turret>();
 
-    public void setDistanceTravelled(float distance){
+    public void SetDistanceTravelled(float distance){
         distanceTravelled = distance;
     }
 
-    public float getDistanceTravelled(){
+    public float GetDistanceTravelled(){
         return distanceTravelled;
+    }
+
+    public Vector3 GetPositionOnPath(float distanceToAdd){
+        return pathCreator.path.GetPointAtDistance(distanceTravelled + distanceToAdd);
     }
 
 

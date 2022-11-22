@@ -8,7 +8,7 @@ using System.Linq;
 
 public class Turret : MonoBehaviour
 {
-    public Transform target;
+    public Vector3? target;
 
     [Header("Turret Skills")]
     public float range = 15f;
@@ -80,7 +80,8 @@ public class Turret : MonoBehaviour
         }
 
         if(enemyInRange != null){
-            target = enemyInRange.gameObject.transform;
+            //25f
+            target = enemyInRange.GetPositionOnPath(Vector3.Distance(transform.position, enemyInRange.transform.position) * (0.11f * enemyInRange.speed));
         }
         else{
             target = null;
@@ -100,7 +101,7 @@ public class Turret : MonoBehaviour
     }
 
     public virtual void RotateTurret(){
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = (Vector3)target - transform.position;
         Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 180) * dir;
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
         if(partToRotate != null)

@@ -72,6 +72,7 @@ MonoBehaviour:
   worth: 20
   gameMaster: {fileID: 0}
   dead: 0
+  listOfBurningTurrets: []
 --- !u!1 &1663469537184244299
 GameObject:
   m_ObjectHideFlags: 0

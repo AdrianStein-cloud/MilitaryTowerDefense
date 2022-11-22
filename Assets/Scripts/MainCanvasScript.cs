@@ -46,7 +46,7 @@ public class MainCanvasScript : MonoBehaviour
     }
 
     void Update(){
-        if(colorsFlipped = true && Input.GetKey("escape")){
+        if(Input.GetKey("escape") && colorsFlipped){
             FlipColors();
         }
     }
