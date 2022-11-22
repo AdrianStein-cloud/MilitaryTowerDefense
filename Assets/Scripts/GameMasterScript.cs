@@ -15,12 +15,14 @@ public class GameMasterScript : MonoBehaviour
     public Button skillTreeButton;
     public Button sellTowerButton;
     public Canvas shotgunSkillTreeCanvas;
+    public Canvas minigunSkillTreeCanvas;
     public Canvas mainCanvas;
     public bool skillTreeOpen = false;
     public bool towerIsBeingPlaced = false;
     public BuyTower buyTowerSelected;
     public GameObject cashInputField;
     public GameObject pauseMenu;
+    public StatsDisplayer statsDisplayer;
     public void SetSelectedTurret(Turret turret){
         if(towerIsBeingPlaced){
             return;
@@ -86,6 +88,7 @@ public class GameMasterScript : MonoBehaviour
     public void AddUpgrade(Upgrade upgrade){
         upgrade.ApplyUpgrade(selectedTurret);
         selectedTurret.UpdateGraphics();
+        statsDisplayer.DisplayStats(selectedTurret);
         UpdateMoney(-upgrade.cost);
     }
 
@@ -101,6 +104,7 @@ public class GameMasterScript : MonoBehaviour
         moneyTextField.text = "" + money;
         shotgunSkillTreeCanvas.gameObject.SetActive(false);
         Time.timeScale = 1;
+        statsDisplayer.gameObject.SetActive(false);
     }
 
     public void OpenSkillTree(){
@@ -108,20 +112,31 @@ public class GameMasterScript : MonoBehaviour
             skillTreeOpen = false;
             Time.timeScale = 1;
             shotgunSkillTreeCanvas.gameObject.SetActive(false);
+            minigunSkillTreeCanvas.gameObject.SetActive(false);
             sellTowerButton.gameObject.SetActive(true);
+            statsDisplayer.gameObject.SetActive(false);
         }
-        else if(selectedTurret is Shotgun){
-            skillTreeOpen = true;
-            shotgunSkillTreeCanvas.gameObject.SetActive(true);
-            sellTowerButton.gameObject.SetActive(false);
-            foreach(SkillTreeButtonScript script in shotgunSkillTreeCanvas.gameObject.GetComponentsInChildren<SkillTreeButtonScript>()){
-                script.DisableInteractable();
-            }
-            foreach(SkillTreeButtonScript button in selectedTurret.upgrades.ToArray()){
-                button.UnlockButtons();
-            }
-            Time.timeScale = 0;
+        else if(selectedTurret.tag == "Shotgun"){
+            LoadSkillTree(shotgunSkillTreeCanvas);
         }
+        else if(selectedTurret.tag == "Minigun"){
+            LoadSkillTree(minigunSkillTreeCanvas);
+        }
+    }
+
+    public void LoadSkillTree(Canvas skillTreeCanvas){
+        skillTreeOpen = true;
+        skillTreeCanvas.gameObject.SetActive(true);
+        sellTowerButton.gameObject.SetActive(false);
+        foreach(SkillTreeButtonScript script in skillTreeCanvas.gameObject.GetComponentsInChildren<SkillTreeButtonScript>()){
+            script.DisableInteractable();
+        }
+        foreach(SkillTreeButtonScript button in selectedTurret.upgrades.ToArray()){
+            button.UnlockButtons();
+        }
+        Time.timeScale = 0;
+        statsDisplayer.gameObject.SetActive(true);
+        statsDisplayer.DisplayStats(selectedTurret);
     }
 
     public void RestartLevel(){

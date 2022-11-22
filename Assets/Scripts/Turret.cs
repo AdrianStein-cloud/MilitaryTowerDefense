@@ -21,6 +21,8 @@ public class Turret : MonoBehaviour
     public bool isIncendiary = false;
     public float bulletSpread = 0.2f;
     public int sellPrice;
+    public bool canOnlyShootWhenLookingAtEnemy = false;
+    public int pierce = 1;
 
 
     [Header("Unity Setup Fields")]
@@ -35,23 +37,23 @@ public class Turret : MonoBehaviour
     public GameObject bulletShellEffect;
     private GameMasterScript gameMaster;
     public Animator animator;
-    private AudioSource shootingSound;
     public float fireCountdown = 0f;
-
-
-
     public bool isSelected = false;
     public bool isBeingPlaced = false;
     public bool canBePlaced = true;
+    public float bulletOffset = 0f;
 
     public List<SkillTreeButtonScript> upgrades = new List<SkillTreeButtonScript>();
+
+    public void UpdatePierce(int change){
+        pierce += change;
+    }
 
     void Awake()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         UpdateRange();
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMasterScript>();
-        shootingSound = GetComponent<AudioSource>();
     }
 
     public void UpdateRange(){
@@ -80,8 +82,8 @@ public class Turret : MonoBehaviour
         }
 
         if(enemyInRange != null){
-            //25f
-            target = enemyInRange.GetPositionOnPath(Vector3.Distance(transform.position, enemyInRange.transform.position) * (0.11f * enemyInRange.speed));
+            //0.11f
+            target = enemyInRange.GetPositionOnPath(Vector3.Distance(transform.position, enemyInRange.transform.position) * ((bulletOffset/100f) * enemyInRange.speed));
         }
         else{
             target = null;
@@ -111,7 +113,14 @@ public class Turret : MonoBehaviour
 
             if (fireCountdown <= 0f)
             {
-                Shoot();
+                if(canOnlyShootWhenLookingAtEnemy){
+                    if(Quaternion.Angle(partToRotate.rotation, lookRotation) < 10){
+                        Shoot();
+                    }
+                }
+                else{
+                    Shoot();
+                }
                 fireCountdown = 1f / fireRate;
             }
         }
@@ -134,6 +143,7 @@ public class Turret : MonoBehaviour
             bullet.damage = damage;
             bullet.speed = bulletSpeed;
             bullet.lifetime = bulletLifeTime;
+            bullet.pierce = pierce;
 
             if (bullet != null)
             {

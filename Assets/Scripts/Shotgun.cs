@@ -46,28 +46,12 @@ public class Shotgun : Turret
                 bullet.incendiary = isIncendiary;
                 bullet.fireDamage = fireDamage;
                 bullet.owner = this;
+                bullet.pierce = pierce;
                 
                 if (bullet != null)
                 {
                     bullet.Seek(Quaternion.Euler(0, 0, (i % 2 == 0 ? 1 : -1) * increase * Mathf.Ceil(i/2f) * 180) * direction);
                 }
-            }
-        }
-    }
-
-    public override void RotateTurret(){
-        Vector3 dir = (Vector3)target - transform.position;
-        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 180) * dir;
-        Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
-        if(partToRotate != null)
-        {
-            Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
-            partToRotate.rotation = rotation;
-
-            if (fireCountdown <= 0f && Quaternion.Angle(partToRotate.rotation, lookRotation) < 10)
-            {
-                Shoot();
-                fireCountdown = 1f / fireRate;
             }
         }
     }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291133758118682407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07, y: -4.71, z: 0}
+  m_LocalPosition: {x: -1.07, y: -4.879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2500059289808160391}
   - component: {fileID: 2500059289808160390}
-  - component: {fileID: 7166199813731917536}
   m_Layer: 7
   m_Name: SpritePart
   m_TagString: Untagged
@@ -105,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 683c935e5cb9e5a489f92b736d88fb05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81f3377b14d41c440b9c87d6b78efc85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,26 +115,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7166199813731917536
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2500059289808160388}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 17a5d19b685d1e343a52e4f0a9d95759, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2500059290423760889
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,8 +162,8 @@ GameObject:
   - component: {fileID: 3864275636556981306}
   - component: {fileID: 7057690403203272492}
   m_Layer: 7
-  m_Name: MachineGunner
-  m_TagString: Minigun
+  m_Name: Rifle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +201,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -240,32 +219,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719faf0a9cfd00c4d96edabad1162a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
-  fireRate: 20
-  damage: 1
+  range: 5
+  fireRate: 1
+  damage: 2
   fireDamage: 0
   bulletLifeTime: 15
-  bulletSpeed: 20
+  bulletSpeed: 50
   canShoot: 1
   isIncendiary: 0
   bulletSpread: 0.2
-  sellPrice: 300
-  canOnlyShootWhenLookingAtEnemy: 0
+  sellPrice: 100
+  canOnlyShootWhenLookingAtEnemy: 1
   pierce: 1
   partToRotate: {fileID: 2500059290423760888}
   startOfGun: {fileID: 881313600966702228}
-  turnSpeed: 10
+  turnSpeed: 20
   bulletPrefab: {fileID: 5171620176534302878, guid: 0e551f81e329e484983606d63d416516, type: 3}
   firePoint: {fileID: 9026101490209558956}
   rangeSprite: {fileID: 872144686370915094}
   flashEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
   bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
-  animator: {fileID: 7166199813731917536}
+  animator: {fileID: 0}
   fireCountdown: 0
   isSelected: 0
   isBeingPlaced: 0
   canBePlaced: 1
-  bulletOffset: 11
+  bulletOffset: 4
   upgrades: []
 --- !u!58 &7057690403203272492
 CircleCollider2D:
@@ -526,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943290427165132024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03, y: -1.96, z: 0}
+  m_LocalPosition: {x: -1.07, y: -1.676, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

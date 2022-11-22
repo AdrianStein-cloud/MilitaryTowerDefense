@@ -5,7 +5,7 @@ using TMPro;
 
 public class Base : MonoBehaviour
 {
-    public int health = 50;
+    public int health = 100;
     public Canvas gameOverCanvas;
 
     public void DamageBase(int damagePoint){
@@ -18,6 +18,7 @@ public class Base : MonoBehaviour
     }
 
     void Start(){
+        health = StaticSceneClass.CrossSceneStartLives;
         DamageBase(0);
         gameOverCanvas.gameObject.SetActive(false);
     }

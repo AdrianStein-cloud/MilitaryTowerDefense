@@ -440,6 +440,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6232228281549590265}
   - {fileID: 402231369572010833}
   - {fileID: 2092459575177123192}
   m_Father: {fileID: 5363894067162908442}
@@ -2655,13 +2656,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &5154573119759292759
+--- !u!1001 &1468429834923564287
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 6435786401677136930}
     m_Modifications:
+    - target: {fileID: 786780806399091013, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InstantiateTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741756579189464816, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab3d3d1845c8ff24fb5709d73a1e746f, type: 3}
     - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2752,34 +2761,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: towerCost
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: towerPrefab
       value: 
-      objectReference: {fileID: 2500059291342352129, guid: 4e1a8242539bfa64db0458db7c79b032, type: 3}
+      objectReference: {fileID: 2500059291342352129, guid: 68e3354e64252254c805555efe97a631, type: 3}
     - target: {fileID: 8191253717407138269, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: m_Name
-      value: Tower Buy Icon
+      value: Rifle Buy Icon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
---- !u!224 &402231369572010833 stripped
+--- !u!224 &6232228281549590265 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
-  m_PrefabInstance: {fileID: 5154573119759292759}
+  m_PrefabInstance: {fileID: 1468429834923564287}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6851192571189806974
+--- !u!1001 &5154573119759292759
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 6435786401677136930}
     m_Modifications:
-    - target: {fileID: 3741756579189464816, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 82ea538ec047d9348beb970e3f102190, type: 3}
     - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2875,10 +2880,128 @@ PrefabInstance:
     - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: towerPrefab
       value: 
+      objectReference: {fileID: 2500059291342352129, guid: 4e1a8242539bfa64db0458db7c79b032, type: 3}
+    - target: {fileID: 8191253717407138269, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_Name
+      value: Shotgun Buy Icon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+--- !u!224 &402231369572010833 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+  m_PrefabInstance: {fileID: 5154573119759292759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6851192571189806974
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6435786401677136930}
+    m_Modifications:
+    - target: {fileID: 3741756579189464816, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82ea538ec047d9348beb970e3f102190, type: 3}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 133.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 133.3593
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764170403681423878, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: shortcut
+      value: e
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: towerCost
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150239596746604137, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
+      propertyPath: towerPrefab
+      value: 
       objectReference: {fileID: 2500059291342352129, guid: 56c1e5b975b68874195b6c6149193e10, type: 3}
     - target: {fileID: 8191253717407138269, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}
       propertyPath: m_Name
-      value: Tower Buy Icon (1)
+      value: Minigun Buy Icon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3106436ddf20b949b75ac3925e9f2c7, type: 3}

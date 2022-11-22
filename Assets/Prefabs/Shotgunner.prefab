@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1856949337284240433}
   m_Layer: 7
   m_Name: Shotgunner
-  m_TagString: Untagged
+  m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f064e8b3cd6fa144fb393ff61ad40071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   range: 3
   fireRate: 1
   damage: 3
@@ -230,6 +229,8 @@ MonoBehaviour:
   isIncendiary: 0
   bulletSpread: 0.5
   sellPrice: 250
+  canOnlyShootWhenLookingAtEnemy: 1
+  pierce: 1
   partToRotate: {fileID: 2500059290423760888}
   startOfGun: {fileID: 881313600966702228}
   turnSpeed: 10
@@ -239,9 +240,11 @@ MonoBehaviour:
   flashEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
   bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
   animator: {fileID: 0}
+  fireCountdown: 0
   isSelected: 0
   isBeingPlaced: 0
   canBePlaced: 1
+  bulletOffset: 11
   upgrades: []
   numberOfBulletsPerShot: 5
   spriteRenderer: {fileID: 2500059289808160390}

@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     public bool incendiary = false;
     public float fireDamage = 0;
     public Turret owner;
+    public int pierce = 1;
+    private int timesHit = 0;
 
     Vector3 dir;
 
@@ -35,7 +37,8 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider2D){
-        if(collider2D.tag == "Enemy"){
+        if(collider2D.tag == "Enemy" && timesHit < pierce){
+            timesHit++;
             collider2D.GetComponent<Enemy>().TakeDamage(damage);
             if(incendiary){
                 collider2D.GetComponent<Enemy>().Burn(fireDamage, owner);
@@ -43,7 +46,9 @@ public class Bullet : MonoBehaviour
             GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir, Vector3.up));
             effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
             Destroy(effectInstance, 1);
-            Destroy(gameObject);
+            if(timesHit >= pierce){
+                Destroy(gameObject);
+            }
         }
     }
 }
