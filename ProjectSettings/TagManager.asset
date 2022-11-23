@@ -10,6 +10,7 @@ TagManager:
   - Minigun
   - Shotgun
   - Rifle
+  - FlameThrower
   layers:
   - Default
   - TransparentFX

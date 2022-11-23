@@ -49,6 +49,10 @@ public class Turret : MonoBehaviour
         pierce += change;
     }
 
+    public void UpdateDamage(int change){
+        damage += change;
+    }
+
     void Awake()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
@@ -114,7 +118,7 @@ public class Turret : MonoBehaviour
             if (fireCountdown <= 0f)
             {
                 if(canOnlyShootWhenLookingAtEnemy){
-                    if(Quaternion.Angle(partToRotate.rotation, lookRotation) < 10){
+                    if(Quaternion.Angle(partToRotate.rotation, lookRotation) < 20){
                         Shoot();
                     }
                 }

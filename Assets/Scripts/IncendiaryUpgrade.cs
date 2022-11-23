@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "IncendiaryUgprade", menuName = "Upgrades/New Incendiary Upgrade")]
+[CreateAssetMenu(fileName = "IncendiaryUpgrade", menuName = "Upgrades/New Incendiary Upgrade")]
 public class IncendiaryUpgrade : Upgrade
 {
     public int fireDamage = 1;

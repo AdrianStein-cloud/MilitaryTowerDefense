@@ -79,6 +79,7 @@ public class WaveSpawner : MonoBehaviour {
 		state = SpawnState.PAUSE;
 		Debug.Log("Wave Completed!");
 		startRoundButton.gameObject.SetActive(true);
+		gameObject.GetComponent<GameMasterScript>().UpdateMoney(100 + nextRound);
 
 		if (nextRound + 1 > rounds.Length - 1)
 		{
