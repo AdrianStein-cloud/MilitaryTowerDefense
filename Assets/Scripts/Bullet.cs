@@ -43,9 +43,12 @@ public class Bullet : MonoBehaviour
             if(incendiary){
                 collider2D.GetComponent<Enemy>().Burn(fireDamage, owner);
             }
-            GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir, Vector3.up));
-            effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
-            Destroy(effectInstance, 1);
+            if(impactEffect != null){
+                GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir, Vector3.up));
+                effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
+                Destroy(effectInstance, 1);
+            }
+            
             if(timesHit >= pierce){
                 Destroy(gameObject);
             }

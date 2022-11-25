@@ -17,6 +17,7 @@ public class GameMasterScript : MonoBehaviour
     public Canvas shotgunSkillTreeCanvas;
     public Canvas minigunSkillTreeCanvas;
     public Canvas rifleSkillTreeCanvas;
+    public Canvas flameThrowerSkillTreeCanvas;
     public Canvas mainCanvas;
     public bool skillTreeOpen = false;
     public bool towerIsBeingPlaced = false;
@@ -115,6 +116,7 @@ public class GameMasterScript : MonoBehaviour
             shotgunSkillTreeCanvas.gameObject.SetActive(false);
             minigunSkillTreeCanvas.gameObject.SetActive(false);
             rifleSkillTreeCanvas.gameObject.SetActive(false);
+            flameThrowerSkillTreeCanvas.gameObject.SetActive(false);
             sellTowerButton.gameObject.SetActive(true);
             statsDisplayer.gameObject.SetActive(false);
         }
@@ -126,6 +128,9 @@ public class GameMasterScript : MonoBehaviour
         }
         else if(selectedTurret.tag == "Rifle"){
             LoadSkillTree(rifleSkillTreeCanvas);
+        }
+        else if(selectedTurret.tag == "FlameThrower"){
+            LoadSkillTree(flameThrowerSkillTreeCanvas);
         }
     }
 

@@ -30,8 +30,11 @@ public class Shotgun : Turret
             shapeModule.angle = bulletSpread * 100;
             Destroy(effectInstance, 1);
 
-            GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
-            Destroy(shellEffectInstance, 1);
+            if(bulletShellEffect != null){
+                GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
+                Destroy(shellEffectInstance, 1);
+            }
+            
 
             var direction = firePoint.position - startOfGun.position;
 
