@@ -140,7 +140,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable: {}
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 

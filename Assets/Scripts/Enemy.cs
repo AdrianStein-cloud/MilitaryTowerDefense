@@ -48,14 +48,16 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
     {
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-        transform.rotation = Quaternion.LookRotation(pathCreator.path.GetNormalAtDistance(distanceTravelled));
+        Vector3 direction = pathCreator.path.GetNormalAtDistance(distanceTravelled);
+        if(direction.x < 0){
+            transform.rotation = Quaternion.LookRotation(direction);
+            transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.x);
+        }
+        else{
+            transform.rotation = Quaternion.LookRotation(-direction);
+            transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.x + 180);
+        }
         
-        transform.eulerAngles = new Vector3(
-            0,
-            0,
-            transform.eulerAngles.x
-        );
-
         healthBar.transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
         healthBar.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.x * -1);
 

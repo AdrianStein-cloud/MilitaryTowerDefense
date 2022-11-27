@@ -104,6 +104,7 @@ public class GameMasterScript : MonoBehaviour
     void Start(){
         SetSelectedTurret(null);
         moneyTextField.text = "" + money;
+        mainCanvas.gameObject.SetActive(true);
         shotgunSkillTreeCanvas.gameObject.SetActive(false);
         Time.timeScale = 1;
         statsDisplayer.gameObject.SetActive(false);

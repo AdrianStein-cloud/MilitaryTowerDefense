@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Price
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a0970c7c819e67c49900404aa842dc6c, type: 2}
+  m_sharedMaterial: {fileID: -7485450723800017539, guid: a0970c7c819e67c49900404aa842dc6c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -287,3 +287,4 @@ MonoBehaviour:
   gameMasterScript: {fileID: 0}
   towerCost: 0
   costTextField: {fileID: 9203774875720499745}
+  shortcut: 

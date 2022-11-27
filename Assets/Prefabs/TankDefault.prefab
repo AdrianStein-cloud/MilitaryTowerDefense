@@ -4952,7 +4952,9 @@ MonoBehaviour:
   worth: 100
   gameMaster: {fileID: 0}
   dead: 0
+  listOfBurningTurrets: []
   soldierPrefab: {fileID: 1131168267763482407, guid: 5fcb1cf2e76985a4782cd9e1d4a49264, type: 3}
+  numberOfSoldierToSpawn: 4
 --- !u!61 &7354115332978930879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4966,7 +4968,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17019439, y: -0.14478207}
+  m_Offset: {x: -0.12887645, y: -0.326581}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4977,7 +4979,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.40389, y: 6.088044}
+  m_Size: {x: 3.2965693, y: 5.7244463}
   m_EdgeRadius: 0
 --- !u!1001 &9057945948485519525
 PrefabInstance:
@@ -4989,6 +4991,10 @@ PrefabInstance:
     - target: {fileID: 6791299998019438715, guid: 1a25fc5dc4346414d910525a41190d72, type: 3}
       propertyPath: m_Name
       value: HealthBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884843895096345953, guid: 1a25fc5dc4346414d910525a41190d72, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8355174137980677041, guid: 1a25fc5dc4346414d910525a41190d72, type: 3}
       propertyPath: m_Pivot.x
