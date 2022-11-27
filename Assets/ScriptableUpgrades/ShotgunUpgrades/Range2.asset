@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2000
   desctription: 
-  title: More Range 2
+  title: Range +1
+  rangeToAdd: 1
+  bulletLifeTimeToAdd: 0

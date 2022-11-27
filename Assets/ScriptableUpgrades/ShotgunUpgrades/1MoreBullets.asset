@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 200
   desctription: 
-  title: More Bullets 1
+  title: Number of Bullets +5
   numberOfBulletsToAdd: 5

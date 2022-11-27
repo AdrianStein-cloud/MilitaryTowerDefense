@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 3000
   desctription: 
-  title: Incendiary Damage 3
+  title: Fire Damage +5
   fireDamage: 5

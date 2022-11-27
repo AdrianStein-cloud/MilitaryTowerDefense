@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1500
   desctription: 
-  title: Faster Fire Rate 1
+  title: Fire Rate +1
+  fireRateToAdd: 1
