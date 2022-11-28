@@ -14,6 +14,7 @@ public class GameMasterScript : MonoBehaviour
     public TextMeshProUGUI moneyTextField;
     public Button skillTreeButton;
     public Button sellTowerButton;
+    public Toggle strongToggle;
     public Canvas shotgunSkillTreeCanvas;
     public Canvas minigunSkillTreeCanvas;
     public Canvas rifleSkillTreeCanvas;
@@ -47,6 +48,7 @@ public class GameMasterScript : MonoBehaviour
             if(selectedTurret is not null){
                 selectedTurret.RangeVisible(true);
                 selectedTurret.isSelected = true;
+                strongToggle.isOn = selectedTurret.aimForStrong;
                 UpdateTowerButtons(true);
             }
             else{
@@ -55,9 +57,12 @@ public class GameMasterScript : MonoBehaviour
         }
     }
 
+    
+
     public void UpdateTowerButtons(bool isEnabled){
         skillTreeButton.gameObject.SetActive(isEnabled);
         sellTowerButton.gameObject.SetActive(isEnabled);
+        strongToggle.gameObject.SetActive(isEnabled);
         if(isEnabled){
             UpdateSellPrice();
         }
@@ -68,6 +73,9 @@ public class GameMasterScript : MonoBehaviour
     }
 
     void Update(){
+        if(selectedTurret != null && selectedTurret.aimForStrong != strongToggle.isOn){
+            selectedTurret.aimForStrong = strongToggle.isOn;
+        }
         if(towerIsBeingPlaced){
             UpdateTowerButtons(false);
         }
@@ -102,6 +110,11 @@ public class GameMasterScript : MonoBehaviour
     public int GetMoney() => money;
 
     void Start(){
+
+        #if (UNITY_EDITOR)
+            cashInputField.SetActive(true);
+        #endif
+
         SetSelectedTurret(null);
         moneyTextField.text = "" + money;
         mainCanvas.gameObject.SetActive(true);

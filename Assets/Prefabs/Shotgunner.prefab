@@ -219,8 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f064e8b3cd6fa144fb393ff61ad40071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   range: 3
-  fireRate: 1
+  fireRate: 2
   damage: 3
   fireDamage: 0
   bulletLifeTime: 2
@@ -231,6 +232,7 @@ MonoBehaviour:
   sellPrice: 250
   canOnlyShootWhenLookingAtEnemy: 1
   pierce: 1
+  aimForStrong: 0
   partToRotate: {fileID: 2500059290423760888}
   startOfGun: {fileID: 881313600966702228}
   turnSpeed: 10

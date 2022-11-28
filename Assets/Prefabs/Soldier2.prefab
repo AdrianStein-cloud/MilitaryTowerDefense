@@ -69,6 +69,7 @@ MonoBehaviour:
   damagePoint: 2
   speed: 3
   healthBar: {fileID: 3457156016581247286}
+  damagePriority: 1
   worth: 20
   gameMaster: {fileID: 0}
   dead: 0

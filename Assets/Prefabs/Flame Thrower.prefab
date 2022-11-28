@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb46df19d8acad41b94b11a47605d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   range: 2.5
   fireRate: 20
   damage: 0.3
@@ -247,9 +248,10 @@ MonoBehaviour:
   sellPrice: 750
   canOnlyShootWhenLookingAtEnemy: 0
   pierce: 2
+  aimForStrong: 0
   partToRotate: {fileID: 2500059290423760888}
   startOfGun: {fileID: 881313600966702228}
-  turnSpeed: 500
+  turnSpeed: 20
   bulletPrefab: {fileID: 5171620176534302878, guid: 0f559f0a6509f25478db2a0ea68e9e4b, type: 3}
   firePoint: {fileID: 9026101490209558956}
   rangeSprite: {fileID: 872144686370915094}

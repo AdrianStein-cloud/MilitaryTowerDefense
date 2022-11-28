@@ -44,6 +44,10 @@ public class WaveSpawner : MonoBehaviour {
 
 	void Start()
 	{
+		#if (UNITY_EDITOR)
+            roundInputField.SetActive(true);
+        #endif
+
 		if (spawnPoints.Length == 0)
 		{
 			Debug.LogError("No spawn points referenced.");
@@ -79,7 +83,7 @@ public class WaveSpawner : MonoBehaviour {
 		state = SpawnState.PAUSE;
 		Debug.Log("Wave Completed!");
 		startRoundButton.gameObject.SetActive(true);
-		gameObject.GetComponent<GameMasterScript>().UpdateMoney(100 + nextRound);
+		gameObject.GetComponent<GameMasterScript>().UpdateMoney(100 + (nextRound * 10));
 
 		if (nextRound + 1 > rounds.Length - 1)
 		{

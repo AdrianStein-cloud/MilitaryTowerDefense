@@ -4949,10 +4949,13 @@ MonoBehaviour:
   damagePoint: 10
   speed: 1.5
   healthBar: {fileID: 2532807418726014369}
+  damagePriority: 3
   worth: 200
   gameMaster: {fileID: 0}
   dead: 0
+  listOfBurningTurrets: []
   soldierPrefab: {fileID: 1131168267763482407, guid: c9c5f6c82e0d99149a2b81f982858ac7, type: 3}
+  numberOfSoldierToSpawn: 4
 --- !u!61 &7354115332978930879
 BoxCollider2D:
   m_ObjectHideFlags: 0

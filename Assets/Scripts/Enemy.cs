@@ -11,11 +11,10 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
     public int damagePoint;
     public float speed;
     public HealthBar healthBar;
-
     private PathCreator pathCreator;
     public int worth = 10;
     
-    float distanceTravelled;
+    public float distanceTravelled;
     private bool burning = false;
     private float fireIntensity = 0;
 

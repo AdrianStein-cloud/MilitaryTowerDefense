@@ -8,7 +8,8 @@ using System.Linq;
 
 public class Turret : MonoBehaviour
 {
-    public Vector3? target;
+    public Vector3? targetPosition;
+    public Enemy target;
 
     [Header("Turret Skills")]
     public float range = 15f;
@@ -23,6 +24,7 @@ public class Turret : MonoBehaviour
     public int sellPrice;
     public bool canOnlyShootWhenLookingAtEnemy = false;
     public int pierce = 1;
+    public bool aimForStrong = false;
 
 
     [Header("Unity Setup Fields")]
@@ -61,7 +63,12 @@ public class Turret : MonoBehaviour
     }
 
     public void UpdateRange(){
-        rangeSprite.localScale = new Vector3(range * 2.15f, range * 2.15f, 1);
+        if(range < 30){
+            rangeSprite.localScale = new Vector3(range * 2.15f, range * 2.15f, 1);
+        }
+        else{
+            rangeSprite.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     public void AddUpgrade(SkillTreeButtonScript upgrade){
@@ -74,6 +81,9 @@ public class Turret : MonoBehaviour
     {
         List<Enemy> enemies = GameObject.FindGameObjectsWithTag("Enemy").Select(x => x.GetComponent<Enemy>()).ToList();
         enemies.Sort();
+        if(aimForStrong){
+            enemies.Sort(SortByStrong);
+        }
 
         Enemy enemyInRange = null;
 
@@ -87,18 +97,23 @@ public class Turret : MonoBehaviour
 
         if(enemyInRange != null){
             //0.11f
-            target = enemyInRange.GetPositionOnPath(Vector3.Distance(transform.position, enemyInRange.transform.position) * ((bulletOffset/100f) * enemyInRange.speed));
+            targetPosition = enemyInRange.GetPositionOnPath(Vector3.Distance(transform.position, enemyInRange.transform.position) * ((bulletOffset/100f) * enemyInRange.speed));
+            target = enemyInRange;
         }
         else{
-            target = null;
+            targetPosition = null;
         }
     }
 
     void Update()
     {
         fireCountdown -= Time.deltaTime;
+        
+        if(target == null || target.dead){
+            UpdateTarget();
+        }
 
-        if(target == null)
+        if(targetPosition == null)
         {
             return;
         }
@@ -107,7 +122,7 @@ public class Turret : MonoBehaviour
     }
 
     public virtual void RotateTurret(){
-        Vector3 dir = (Vector3)target - transform.position;
+        Vector3 dir = (Vector3)targetPosition - transform.position;
         Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 180) * dir;
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
         if(partToRotate != null)
@@ -142,22 +157,33 @@ public class Turret : MonoBehaviour
             GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
             Destroy(shellEffectInstance, 1);
 
-            GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Bullet bullet = bulletGO.GetComponent<Bullet>();
-            bullet.damage = damage;
-            bullet.speed = bulletSpeed;
-            bullet.lifetime = bulletLifeTime;
-            bullet.pierce = pierce;
-
-            if (bullet != null)
-            {
-                bullet.Seek(firePoint.position - startOfGun.position);
+            if(bulletPrefab != null){
+                InstantiateBullet();
             }
+            else{
+                target.TakeDamage(damage);
+            }
+
+            
 
             if(animator != null){
                 animator.SetTrigger("Shoot");
             }
 
+        }
+    }
+
+    public void InstantiateBullet(){
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.damage = damage;
+        bullet.speed = bulletSpeed;
+        bullet.lifetime = bulletLifeTime;
+        bullet.pierce = pierce;
+
+        if (bullet != null)
+        {
+            bullet.Seek(firePoint.position - startOfGun.position);
         }
     }
 
@@ -214,5 +240,15 @@ public class Turret : MonoBehaviour
         this.isBeingPlaced = isBeingPlaced;
         gameMaster.towerIsBeingPlaced = isBeingPlaced;
         gameMaster.UpdateTowerButtons(true);
+    }
+
+    static int SortByStrong(Enemy e1, Enemy e2)
+    {
+        if(e2.maxHealth.CompareTo(e1.maxHealth) != 0){
+            return e2.maxHealth.CompareTo(e1.maxHealth);
+        }
+        else{
+            return e2.distanceTravelled.CompareTo(e1.distanceTravelled);
+        }
     }
 }
