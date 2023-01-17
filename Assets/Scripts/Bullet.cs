@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float damage = 0;
     public float lifetime = 0;
     public bool incendiary = false;
+    public bool explosive = false;
     public float fireDamage = 0;
     public Turret owner;
     public int pierce = 1;
@@ -43,11 +44,17 @@ public class Bullet : MonoBehaviour
             if(incendiary){
                 collider2D.GetComponent<Enemy>().Burn(fireDamage, owner);
             }
-            if(impactEffect != null){
+            if(explosive){
+                GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir));
+                effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
+                Destroy(effectInstance, 1);
+            }
+            else if(impactEffect != null){
                 GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir, Vector3.up));
                 effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
                 Destroy(effectInstance, 1);
             }
+            
             
             if(timesHit >= pierce){
                 Destroy(gameObject);
