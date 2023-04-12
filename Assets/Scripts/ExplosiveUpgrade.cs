@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "ExplosiveUpgrade", menuName = "Upgrades/New Explosive Upgrade")]
+public class ExplosiveUpgrade : Upgrade
+{
+    public int fireratePercentageToRemove = 70;
+    public int damageToAdd;
+    public float explosionRadiusToAdd = 1;
+    public GameObject bulletPrefab;
+
+    public override void ApplyUpgrade(Turret turret)
+    {
+        turret.fireRatePercentage -= fireratePercentageToRemove;
+        turret.explosionRadius += explosionRadiusToAdd;
+        turret.bulletPrefab = bulletPrefab;
+        turret.damage += damageToAdd;
+    }
+}

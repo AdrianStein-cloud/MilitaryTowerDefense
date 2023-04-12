@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public abstract class Upgrade : ScriptableObject
 {
     public int cost = 100;
-    public string desctription;
+    public string description;
     public string title;
     public abstract void ApplyUpgrade(Turret turret);
 }

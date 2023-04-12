@@ -14,8 +14,10 @@ public class Turret : MonoBehaviour
     [Header("Turret Skills")]
     public float range = 15f;
     public float fireRate = 1f;
+    public float fireRatePercentage = 100;
     public float damage = 20;
     public float fireDamage = 0;
+    public float explosionRadius = 0;
     public float bulletLifeTime = 20;
     public float bulletSpeed = 70;
     public bool canShoot = true;
@@ -140,7 +142,7 @@ public class Turret : MonoBehaviour
                 else{
                     Shoot();
                 }
-                fireCountdown = 1f / fireRate;
+                fireCountdown = 1f / (fireRate * (fireRatePercentage / 100));
             }
         }
     }
@@ -180,6 +182,7 @@ public class Turret : MonoBehaviour
         bullet.speed = bulletSpeed;
         bullet.lifetime = bulletLifeTime;
         bullet.pierce = pierce;
+        bullet.owner = this;
 
         if (bullet != null)
         {

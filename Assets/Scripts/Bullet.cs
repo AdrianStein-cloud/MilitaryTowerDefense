@@ -40,18 +40,29 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider2D){
         if(collider2D.tag == "Enemy" && timesHit < pierce){
             timesHit++;
-            collider2D.GetComponent<Enemy>().TakeDamage(damage);
             if(incendiary){
                 collider2D.GetComponent<Enemy>().Burn(fireDamage, owner);
             }
             if(explosive){
-                GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir));
-                effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
-                Destroy(effectInstance, 1);
+                GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.identity);
+                var shape = effectInstance.GetComponent<ParticleSystem>().shape;
+                shape.angle = owner.explosionRadius;
+                Destroy(effectInstance, 3);
+                var collisions = Physics2D.OverlapCircleAll(transform.position, owner.explosionRadius);
+                foreach(Collider2D collider in collisions)
+                {
+                    if(collider.gameObject.CompareTag("Enemy"))
+                    {
+                        float damageToTake = damage * (((Mathf.Clamp01(Vector2.Distance(transform.position, collider.gameObject.transform.position) / owner.explosionRadius)) -1) * -1);
+                        Debug.Log("Damage: " + damageToTake);
+                        collider.GetComponent<Enemy>().TakeDamage(damageToTake);
+                    }
+                }
             }
             else if(impactEffect != null){
+                collider2D.GetComponent<Enemy>().TakeDamage(damage);
                 GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.LookRotation(dir, Vector3.up));
-                effectInstance.gameObject.transform.parent = collider2D.gameObject.transform;
+                effectInstance.transform.parent = collider2D.gameObject.transform;
                 Destroy(effectInstance, 1);
             }
             

@@ -222,10 +222,11 @@ MonoBehaviour:
   target: {fileID: 0}
   range: 3.3
   fireRate: 1
-  damage: 2
+  damage: 10
   fireDamage: 0
+  explosionRadius: 1
   bulletLifeTime: 15
-  bulletSpeed: 10
+  bulletSpeed: 20
   canShoot: 1
   isIncendiary: 0
   bulletSpread: 0.2
