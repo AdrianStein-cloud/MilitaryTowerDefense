@@ -11,6 +11,7 @@ TagManager:
   - Shotgun
   - Rifle
   - FlameThrower
+  - RocketLauncher
   layers:
   - Default
   - TransparentFX

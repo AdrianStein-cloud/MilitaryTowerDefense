@@ -54,8 +54,12 @@ public class Bullet : MonoBehaviour
                     if(collider.gameObject.CompareTag("Enemy"))
                     {
                         float damageToTake = damage * (((Mathf.Clamp01(Vector2.Distance(transform.position, collider.gameObject.transform.position) / owner.explosionRadius)) -1) * -1);
-                        Debug.Log("Damage: " + damageToTake);
                         collider.GetComponent<Enemy>().TakeDamage(damageToTake);
+                        if (incendiary)
+                        {
+                            Debug.Log("FIRE FIRE FIRE FIRE");
+                            collider.GetComponent<Enemy>().Burn(fireDamage, owner);
+                        }
                     }
                 }
             }

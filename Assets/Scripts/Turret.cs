@@ -152,12 +152,21 @@ public class Turret : MonoBehaviour
         if (canShoot)
         {
             GameObject flashEffectInstance = (GameObject)Instantiate(flashEffect, firePoint.position, Quaternion.LookRotation(firePoint.position - startOfGun.position, Vector3.up));
+            if(flashEffect == bulletShellEffect) //For rocket launcher
+            {
+                GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, 180) * (firePoint.position - startOfGun.position), Vector3.down));
+                ParticleSystem.ShapeModule shape = shellEffectInstance.GetComponent<ParticleSystem>().shape;
+                shape.angle = bulletSpread * 100;
+                Destroy(flashEffectInstance, 1);
+            }
+            else
+            {
+                GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
+                Destroy(shellEffectInstance, 1);
+            }
             ParticleSystem.ShapeModule shapeModule = flashEffectInstance.GetComponent<ParticleSystem>().shape;
             shapeModule.angle = bulletSpread * 100;
             Destroy(flashEffectInstance, 1);
-
-            GameObject shellEffectInstance = (GameObject)Instantiate(bulletShellEffect, startOfGun.position, Quaternion.LookRotation(Quaternion.Euler(0, 0, -90) * (firePoint.position - startOfGun.position), Vector3.down));
-            Destroy(shellEffectInstance, 1);
 
             if(bulletPrefab != null){
                 InstantiateBullet();
@@ -183,6 +192,8 @@ public class Turret : MonoBehaviour
         bullet.lifetime = bulletLifeTime;
         bullet.pierce = pierce;
         bullet.owner = this;
+        bullet.incendiary = isIncendiary;
+        bullet.fireDamage = fireDamage;
 
         if (bullet != null)
         {

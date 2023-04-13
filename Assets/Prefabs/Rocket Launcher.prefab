@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291133758118682407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07, y: -4.879, z: 0}
+  m_LocalPosition: {x: -1.83, y: -4.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 81f3377b14d41c440b9c87d6b78efc85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98704fb15f2aad147b8dcae9af2dd31a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7057690403203272492}
   m_Layer: 7
   m_Name: Rocket Launcher
-  m_TagString: Rifle
+  m_TagString: RocketLauncher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,8 +221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   range: 3.3
-  fireRate: 1
-  damage: 10
+  fireRate: 0.8
+  fireRatePercentage: 100
+  damage: 30
   fireDamage: 0
   explosionRadius: 1
   bulletLifeTime: 15
@@ -241,13 +242,13 @@ MonoBehaviour:
   firePoint: {fileID: 9026101490209558956}
   rangeSprite: {fileID: 872144686370915094}
   flashEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
-  bulletShellEffect: {fileID: 1247143356695809911, guid: 8c3f3e8bccf90144c8e73f51d8d642ae, type: 3}
+  bulletShellEffect: {fileID: 7335674482691426957, guid: d7cfdf4da80723e4181274c843d47ada, type: 3}
   animator: {fileID: 0}
   fireCountdown: 0
   isSelected: 0
   isBeingPlaced: 0
   canBePlaced: 1
-  bulletOffset: 4
+  bulletOffset: 10
   upgrades: []
 --- !u!58 &7057690403203272492
 CircleCollider2D:
@@ -508,7 +509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943290427165132024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07, y: -1.676, z: 0}
+  m_LocalPosition: {x: -1.86, y: 3.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

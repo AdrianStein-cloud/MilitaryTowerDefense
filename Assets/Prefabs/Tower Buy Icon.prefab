@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Price
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a0970c7c819e67c49900404aa842dc6c, type: 2}
-  m_sharedMaterial: {fileID: -7485450723800017539, guid: a0970c7c819e67c49900404aa842dc6c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3afc1489ce54ccb40a8fb3f310f1a01f, type: 2}
+  m_sharedMaterial: {fileID: -8630619668757992550, guid: 3afc1489ce54ccb40a8fb3f310f1a01f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 028613fe65ef07b40bc5c4105164d47f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23b2f96f728fdb948aaced4289270240, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -282,9 +282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28db8a1d2d12fd643b240832f5e6b67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2500059291342352129, guid: ec09309ddf96dbd4f9ca12d932892649, type: 3}
   placingTower: 0
   gameMasterScript: {fileID: 0}
-  towerCost: 0
+  towerCost: 600
   costTextField: {fileID: 9203774875720499745}
-  shortcut: 
+  shortcut: r

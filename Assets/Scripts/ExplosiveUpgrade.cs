@@ -14,7 +14,7 @@ public class ExplosiveUpgrade : Upgrade
     {
         turret.fireRatePercentage -= fireratePercentageToRemove;
         turret.explosionRadius += explosionRadiusToAdd;
-        turret.bulletPrefab = bulletPrefab;
+        if(bulletPrefab != null) turret.bulletPrefab = bulletPrefab;
         turret.damage += damageToAdd;
     }
 }
