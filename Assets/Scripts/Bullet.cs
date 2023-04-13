@@ -57,7 +57,6 @@ public class Bullet : MonoBehaviour
                         collider.GetComponent<Enemy>().TakeDamage(damageToTake);
                         if (incendiary)
                         {
-                            Debug.Log("FIRE FIRE FIRE FIRE");
                             collider.GetComponent<Enemy>().Burn(fireDamage, owner);
                         }
                     }
