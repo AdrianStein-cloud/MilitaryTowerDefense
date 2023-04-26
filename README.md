@@ -1,2 +1,2 @@
 # MilitaryDefenseUnity
-Repository for Military Defense unity project files
+Repository for Military Tower Defense unity project files
