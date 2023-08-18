@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de6cc51f1e1de845874a61a2fe64efb, type: 3}
-  m_Name: 1FireDamage
+  m_Script: {fileID: 11500000, guid: a77cf9cf93aa8704ebd772ae22e88bff, type: 3}
+  m_Name: 1FireRate
   m_EditorClassIdentifier: 
   cost: 1500
   description: 
-  title: Fire Intensity +5
-  fireDamage: 5
-  updateSprite: {fileID: 0}
+  title: Fire Rate +1
+  fireRateToAdd: 1

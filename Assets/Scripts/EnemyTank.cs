@@ -14,7 +14,9 @@ public class EnemyTank : Enemy
             gameMaster.UpdateMoney(worth);
             for (int i = 0; i < numberOfSoldierToSpawn; i++)
             {
-                Instantiate(soldierPrefab).GetComponent<Enemy>().SetDistanceTravelled(this.GetDistanceTravelled() - (((float)i/3f) - 1));
+                Enemy soldier = Instantiate(soldierPrefab).GetComponent<Enemy>();
+                soldier.SetDistanceTravelled(this.GetDistanceTravelled() - (((float)i/3f) - 1));
+                if(burning) soldier.Burn(fireIntensityToChildren, listOfBurningTurretsToChildren);
             }
             
             Destroy(this.gameObject);

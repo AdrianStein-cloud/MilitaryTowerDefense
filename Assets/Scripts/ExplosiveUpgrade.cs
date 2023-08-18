@@ -9,6 +9,8 @@ public class ExplosiveUpgrade : Upgrade
     public int damageToAdd;
     public float explosionRadiusToAdd = 1;
     public GameObject bulletPrefab;
+    public Animation updateIdleAnimation;
+    public Animation updateShootAnimation;
 
     public override void ApplyUpgrade(Turret turret)
     {

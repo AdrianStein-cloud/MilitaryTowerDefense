@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc71a9d229a519748b63c2ef0cf870c9, type: 3}
-  m_Name: 1ExplosiveUpgrade
+  m_Name: 2ExRadius
   m_EditorClassIdentifier: 
   cost: 2000
   description: 
-  title: Explosive Ammo
-  fireratePercentageToRemove: 50
-  damageToAdd: 50
+  title: Blast Radius +50%
+  fireratePercentageToRemove: 0
+  damageToAdd: 0
   explosionRadiusToAdd: 0.5
-  bulletPrefab: {fileID: 5171620176534302878, guid: e6e7ccc0139bb68458fd80595ef7e93e, type: 3}
+  bulletPrefab: {fileID: 0}
   updateIdleAnimation: {fileID: 0}
   updateShootAnimation: {fileID: 0}

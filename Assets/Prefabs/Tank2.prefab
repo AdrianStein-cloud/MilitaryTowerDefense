@@ -4944,13 +4944,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e6bca44e2a16a4e81047dded902a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
-  maxHealth: 300
+  health: 250
+  maxHealth: 250
   damagePoint: 10
   speed: 1.5
   healthBar: {fileID: 2532807418726014369}
-  damagePriority: 3
   worth: 200
+  distanceTravelled: 0
   gameMaster: {fileID: 0}
   dead: 0
   listOfBurningTurrets: []

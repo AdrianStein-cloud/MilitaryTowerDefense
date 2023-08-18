@@ -15,14 +15,16 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
     public int worth = 10;
     
     public float distanceTravelled;
-    private bool burning = false;
+    public bool burning = false;
     private float fireIntensity = 0;
+    public float fireIntensityToChildren = 0;
 
     private ParticleSystem ps;
     public GameMasterScript gameMaster;
 
     public bool dead = false;
     public List<Turret> listOfBurningTurrets = new List<Turret>();
+    public List<Turret> listOfBurningTurretsToChildren = new List<Turret>();
 
     public void SetDistanceTravelled(float distance){
         distanceTravelled = distance;
@@ -86,10 +88,35 @@ public class Enemy : MonoBehaviour, IComparable<Enemy>
         burning = true;
         if(!listOfBurningTurrets.Contains(turret)){
             fireIntensity += fireDamage;
-            print("FireIntensity: " + fireIntensity);
+            if(turret.fireToChildren){
+                fireIntensityToChildren += fireDamage;
+            }
             listOfBurningTurrets.Add(turret);
+            if(turret.fireToChildren){
+                listOfBurningTurretsToChildren.Add(turret);
+            }
         }
         ps.Play();
+    }
+
+    public void Burn(float fireDamage, List<Turret> turrets){
+        if(fireDamage > 0){
+            burning = true;
+            ps.Play();
+        } 
+        foreach (Turret turret in turrets)
+        {
+            if(!listOfBurningTurrets.Contains(turret)){
+                fireIntensity += fireDamage;
+                if(turret.fireToChildren){
+                    fireIntensityToChildren += fireDamage;
+                }
+                listOfBurningTurrets.Add(turret);
+                if(turret.fireToChildren){
+                    listOfBurningTurretsToChildren.Add(turret);
+                }
+            }
+        }
     }
 
     public int CompareTo(Enemy other)

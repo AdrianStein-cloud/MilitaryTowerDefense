@@ -5,21 +5,6 @@ using UnityEngine;
 public class Shotgun : Turret
 {
     public int numberOfBulletsPerShot = 7;
-    public SpriteRenderer spriteRenderer;
-
-    [SerializeField]
-    public Sprite shotgunnerDefault;
-    [SerializeField]
-    public Sprite shotgunnerIncendiary;
-
-    public override void UpdateGraphics(){
-        if(isIncendiary){
-            spriteRenderer.sprite = shotgunnerIncendiary;
-        }
-        else{
-            spriteRenderer.sprite = shotgunnerDefault;
-        }
-    }
 
     public override void Shoot()
     {

@@ -16,3 +16,4 @@ MonoBehaviour:
   description: 
   title: Incendiary Rockets
   fireDamage: 1
+  updateSprite: {fileID: 21300000, guid: e16a465b2a9afbe47bfc06d715dfe420, type: 3}

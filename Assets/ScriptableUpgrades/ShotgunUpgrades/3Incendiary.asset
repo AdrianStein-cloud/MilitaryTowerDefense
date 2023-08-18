@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3Incendiary
   m_EditorClassIdentifier: 
   cost: 3000
-  desctription: 
-  title: Fire Damage +5
-  fireDamage: 5
+  description: 
+  title: Fire Damage +7
+  fireDamage: 7
+  updateSprite: {fileID: 0}

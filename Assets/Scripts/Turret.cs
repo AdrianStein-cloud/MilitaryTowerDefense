@@ -17,6 +17,7 @@ public class Turret : MonoBehaviour
     public float fireRatePercentage = 100;
     public float damage = 20;
     public float fireDamage = 0;
+    public bool fireToChildren = false;
     public float explosionRadius = 0;
     public float bulletLifeTime = 20;
     public float bulletSpeed = 70;

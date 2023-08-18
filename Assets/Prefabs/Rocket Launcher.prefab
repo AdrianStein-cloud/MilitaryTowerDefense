@@ -223,7 +223,7 @@ MonoBehaviour:
   range: 3.3
   fireRate: 0.8
   fireRatePercentage: 100
-  damage: 30
+  damage: 20
   fireDamage: 0
   explosionRadius: 1
   bulletLifeTime: 15
@@ -248,7 +248,7 @@ MonoBehaviour:
   isSelected: 0
   isBeingPlaced: 0
   canBePlaced: 1
-  bulletOffset: 10
+  bulletOffset: 7
   upgrades: []
 --- !u!58 &7057690403203272492
 CircleCollider2D:

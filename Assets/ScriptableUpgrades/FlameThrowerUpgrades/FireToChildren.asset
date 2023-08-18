@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de6cc51f1e1de845874a61a2fe64efb, type: 3}
-  m_Name: 1FireDamage
+  m_Name: FireToChildren
   m_EditorClassIdentifier: 
-  cost: 1500
+  cost: 2000
   description: 
-  title: Fire Intensity +5
-  fireDamage: 5
+  title: Fire Spread To Children
+  fireDamage: 0
   updateSprite: {fileID: 0}
+  fireToChildren: 1
