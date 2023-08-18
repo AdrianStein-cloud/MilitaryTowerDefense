@@ -19,5 +19,4 @@ MonoBehaviour:
   damageToAdd: 50
   explosionRadiusToAdd: 0.5
   bulletPrefab: {fileID: 5171620176534302878, guid: e6e7ccc0139bb68458fd80595ef7e93e, type: 3}
-  updateIdleAnimation: {fileID: 0}
-  updateShootAnimation: {fileID: 0}
+  updateSprite: {fileID: 21300000, guid: 7ed4fb58658edff49a12815c0418ca2a, type: 3}

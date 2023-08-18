@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 2FireRate
   m_EditorClassIdentifier: 
   cost: 2000
-  desctription: 
-  title: Fire Rate +1
-  fireRateToAdd: 1
+  description: 
+  title: Fire Rate +2
+  fireRateToAdd: 2

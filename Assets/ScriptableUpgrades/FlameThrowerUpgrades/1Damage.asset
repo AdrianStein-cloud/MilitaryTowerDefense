@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 1Damage
   m_EditorClassIdentifier: 
   cost: 4000
-  desctription: 
-  title: Damage +1
-  damageToAdd: 1
+  description: 
+  title: Damage +2
+  damageToAdd: 2

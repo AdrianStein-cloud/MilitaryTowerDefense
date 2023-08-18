@@ -8,7 +8,7 @@ public class StatsDisplayer : MonoBehaviour
     public TextMeshProUGUI statsTextField;
 
     public void DisplayStats(Turret turret){
-        string result = $"<b><u>Turret Stats</u></b> \nRange: {turret.range} \nRate of fire: {turret.fireRate * (turret.fireRatePercentage / 100)} \nBullet Damage: {turret.damage} \nBullet Pierce: {turret.pierce} \n";
+        string result = $"<b><u>Turret Stats</u></b> \nRange: {turret.range} \nRate of fire: {turret.fireRate * (turret.fireRatePercentage / 100)} \nBullet Damage: {turret.damage * (1 + (turret.fireDamage / 40))} Multiplier: x{1 + (turret.fireDamage / 40)} \nBullet Pierce: {turret.pierce} \n";
         if(turret.isIncendiary){
             result += $"Fire Intensity: {turret.fireDamage} \n";
         }

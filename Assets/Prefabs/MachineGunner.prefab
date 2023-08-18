@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 683c935e5cb9e5a489f92b736d88fb05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ed4fb58658edff49a12815c0418ca2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,8 +244,10 @@ MonoBehaviour:
   target: {fileID: 0}
   range: 3
   fireRate: 20
+  fireRatePercentage: 100
   damage: 1
   fireDamage: 0
+  fireToChildren: 0
   explosionRadius: 0
   bulletLifeTime: 15
   bulletSpeed: 20

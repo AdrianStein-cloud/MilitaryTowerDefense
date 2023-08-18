@@ -173,16 +173,17 @@ public class Turret : MonoBehaviour
                 InstantiateBullet();
             }
             else{
-                target.TakeDamage(damage);
+                target.TakeDamage(damage * (1 + (fireDamage / 40)));
             }
-
-            
 
             if(animator != null){
                 animator.SetTrigger("Shoot");
             }
-
         }
+    }
+
+    public void SetIsExplosive(bool isExplosive){
+        if(isExplosive && animator != null) animator.SetBool("IsExplosive", true);
     }
 
     public void InstantiateBullet(){

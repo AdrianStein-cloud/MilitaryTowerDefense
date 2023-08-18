@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2000
   description: 
-  title: Fire Intensity +10
-  fireDamage: 10
+  title: Fire Intensity +20
+  fireDamage: 20
   updateSprite: {fileID: 0}
+  fireToChildren: 0

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 3MoreBullets
   m_EditorClassIdentifier: 
   cost: 1000
-  desctription: 
-  title: Number of Bullets +5
-  numberOfBulletsToAdd: 5
+  description: 
+  title: Number of Bullets +10
+  numberOfBulletsToAdd: 10
