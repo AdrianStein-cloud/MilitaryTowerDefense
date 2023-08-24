@@ -387,6 +387,85 @@ MonoBehaviour:
       rate: 1
       timeToNextWave: 0
       repeat: 0
+  - name: Round 18
+    waves:
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 10
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 10
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 1131168267763482392, guid: c9c5f6c82e0d99149a2b81f982858ac7, type: 3}
+      count: 100
+      rate: 20
+      timeToNextWave: 0
+      repeat: 0
+  - name: Round 19
+    waves:
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: 724a8cdcf11667d4086475906148c276, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
+    - enemy: {fileID: 4934811982760234331, guid: df015db31f2a87642bab259e59cb3d51, type: 3}
+      count: 3
+      rate: 2
+      timeToNextWave: 0
+      repeat: 0
   roundTextField: {fileID: 1297525475531010353}
   startRoundButton: {fileID: 5567198414174127157}
   roundInputField: {fileID: 2432155324693084213}

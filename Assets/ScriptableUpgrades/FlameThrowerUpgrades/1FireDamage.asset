@@ -17,3 +17,4 @@ MonoBehaviour:
   title: Fire Intensity +5
   fireDamage: 5
   updateSprite: {fileID: 0}
+  fireToChildren: 0

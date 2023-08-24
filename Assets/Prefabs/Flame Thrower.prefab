@@ -239,8 +239,9 @@ MonoBehaviour:
   range: 2.5
   fireRate: 20
   fireRatePercentage: 100
-  damage: 0.4
+  damage: 10
   fireDamage: 3
+  fireToChildren: 0
   explosionRadius: 0
   bulletLifeTime: 4
   bulletSpeed: 5
