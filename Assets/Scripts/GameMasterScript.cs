@@ -27,6 +27,8 @@ public class GameMasterScript : MonoBehaviour
     public GameObject cashInputField;
     public GameObject pauseMenu;
     public StatsDisplayer statsDisplayer;
+    public float speed = 1f;
+
     public void SetSelectedTurret(Turret turret){
         if(towerIsBeingPlaced){
             return;
@@ -120,14 +122,14 @@ public class GameMasterScript : MonoBehaviour
         moneyTextField.text = "" + money;
         mainCanvas.gameObject.SetActive(true);
         shotgunSkillTreeCanvas.gameObject.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = speed;
         statsDisplayer.gameObject.SetActive(false);
     }
 
     public void OpenSkillTree(){
         if(skillTreeOpen){
             skillTreeOpen = false;
-            Time.timeScale = 1;
+            Time.timeScale = speed;
             shotgunSkillTreeCanvas.gameObject.SetActive(false);
             minigunSkillTreeCanvas.gameObject.SetActive(false);
             rifleSkillTreeCanvas.gameObject.SetActive(false);
@@ -180,7 +182,7 @@ public class GameMasterScript : MonoBehaviour
     }
 
     public void UnpauseGame(){
-        Time.timeScale = 1;
+        Time.timeScale = speed;
         pauseMenu.SetActive(false);
     }
 

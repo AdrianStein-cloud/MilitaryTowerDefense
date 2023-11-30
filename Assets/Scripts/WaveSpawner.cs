@@ -28,6 +28,14 @@ public class WaveSpawner : MonoBehaviour {
 	public Button startRoundButton;
 	public GameObject roundInputField;
 	private int nextRound = 0;
+
+	public Button speedUpButton;
+	public Sprite speedOn;
+	public Sprite speedOff;
+	private float maxSpeed = 2f;
+
+	private GameMasterScript gameMasterScript;
+
 	public int NextRound
 	{
 		get { return nextRound + 1; }
@@ -44,8 +52,13 @@ public class WaveSpawner : MonoBehaviour {
 
 	void Start()
 	{
-		#if (UNITY_EDITOR)
-            roundInputField.SetActive(true);
+        startRoundButton.gameObject.SetActive(true);
+        speedUpButton.gameObject.SetActive(false);
+
+        gameMasterScript = gameObject.GetComponent<GameMasterScript>();
+
+        #if (UNITY_EDITOR)
+        roundInputField.SetActive(true);
         #endif
 
 		if (spawnPoints.Length == 0)
@@ -71,8 +84,25 @@ public class WaveSpawner : MonoBehaviour {
 		}
 	}
 
+	public void SpeedToggle()
+	{
+		if(gameMasterScript.speed == 1)
+		{
+			gameMasterScript.speed = maxSpeed;
+			Time.timeScale = gameMasterScript.speed;
+			speedUpButton.GetComponent<Image>().sprite = speedOn;
+		}
+		else if (gameMasterScript.speed == maxSpeed)
+		{
+            gameMasterScript.speed = 1;
+            Time.timeScale = gameMasterScript.speed;
+            speedUpButton.GetComponent<Image>().sprite = speedOff;
+        }
+	}
+
 	public void StartNextRound(){
 		startRoundButton.gameObject.SetActive(false);
+		speedUpButton.gameObject.SetActive(true);
 		if(int.TryParse(roundInputField.GetComponent<TMP_InputField>().text, out int result))
                 nextRound = result - 1;
 		StartCoroutine( SpawnRound ( rounds[nextRound] ) );
@@ -83,7 +113,8 @@ public class WaveSpawner : MonoBehaviour {
 		state = SpawnState.PAUSE;
 		Debug.Log("Wave Completed!");
 		startRoundButton.gameObject.SetActive(true);
-		gameObject.GetComponent<GameMasterScript>().UpdateMoney(100 + (nextRound * 10));
+        speedUpButton.gameObject.SetActive(false);
+        gameMasterScript.UpdateMoney(100 + (nextRound * 10));
 
 		if (nextRound + 1 > rounds.Length - 1)
 		{
